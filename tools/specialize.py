@@ -205,7 +205,7 @@ def install(distribution, skills_dir, *, acknowledge_limits=False):
         raise ValueError('Explicit acknowledgement of generic capability limits is required')
     names = manifest['skills']
     existing = [p for p in skills_dir.rglob('SKILL.md') if p.parent.name in names]
-    record = skills_dir / '.pstack-runtime.json'
+    record = skills_dir / '.mp-runtime.json'
     if existing or record.exists() or any((skills_dir / name).exists() for name in names):
         raise ValueError('Refusing existing skills/runtime record; use a reviewed migration')
     skills_dir.mkdir(parents=True, exist_ok=True)
@@ -247,7 +247,7 @@ def install(distribution, skills_dir, *, acknowledge_limits=False):
 def uninstall(skills_dir, *, confirm=False):
     """Remove only a complete, unchanged installation recorded by this setup tool."""
     skills_dir = Path(skills_dir).expanduser().resolve()
-    record = skills_dir / '.pstack-runtime.json'
+    record = skills_dir / '.mp-runtime.json'
     if record.is_symlink() or not record.is_file():
         raise ValueError('Missing or linked uninstall receipt; no removal authorized')
     receipt = json.loads(record.read_text())
@@ -255,7 +255,7 @@ def uninstall(skills_dir, *, confirm=False):
     files = receipt.get('files')
     if receipt.get('schema_version') != 1 or not isinstance(names, list) or not names or not isinstance(files, list) or not files:
         raise ValueError('Missing uninstall ownership hashes; legacy installs require a reviewed migration')
-    if len(set(names)) != len(names) or any(not isinstance(n, str) or not NAME.fullmatch(n) or not n.startswith('pstack-') or len(n) > 64 for n in names):
+    if len(set(names)) != len(names) or any(not isinstance(n, str) or not NAME.fullmatch(n) or not n.startswith('mp-') or len(n) > 64 for n in names):
         raise ValueError('Invalid uninstall skill names')
     expected = {}
     for item in files:
@@ -293,7 +293,7 @@ def uninstall(skills_dir, *, confirm=False):
     if not confirm:
         return result
     import tempfile
-    staging = Path(tempfile.mkdtemp(prefix='.pstack-uninstall-', dir=skills_dir))
+    staging = Path(tempfile.mkdtemp(prefix='.mp-uninstall-', dir=skills_dir))
     moved = []
     try:
         for source in [*(skills_dir / name for name in names), record]:
@@ -367,7 +367,7 @@ def main(argv=None):
         elif args.action == 'uninstall':
             target = args.skills_dir if args.skills_dir is not None else args.home.expanduser() / 'skills'
             if args.home is not None:
-                receipt = json.loads((target / '.pstack-runtime.json').read_text())
+                receipt = json.loads((target / '.mp-runtime.json').read_text())
                 if receipt.get('runtime') != 'hermes':
                     raise ValueError('Only the Hermes adapter defines --home; choose --skills-dir explicitly')
             result = uninstall(target, confirm=args.yes)
