@@ -1,0 +1,13 @@
+{
+  "revision": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+  "cloned_from": "https://github.com/mattpocock/skills",
+  "license": "MIT",
+  "copyright": "Matt Pocock",
+  "promoted_set_files": 79,
+  "breakdown": {
+    "SKILL.md": 27,
+    "agents/openai.yaml": 27,
+    "carrier files": 25
+  },
+  "staged": "promoted-only per user decision 2026-10-03; in-progress/ and misc/ NOT staged"
+}

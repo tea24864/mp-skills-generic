@@ -1,0 +1,126 @@
+{
+  "pin": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+  "note": "reference-only stash per user decision 2026-10-03: ported scope = 27 promoted skills only",
+  "groups": {
+    "in-progress": {
+      "skills": [
+        {
+          "name": "claude-handoff",
+          "files": 2
+        },
+        {
+          "name": "loop-me",
+          "files": 2
+        },
+        {
+          "name": "setup-ts-deep-modules",
+          "files": 3
+        },
+        {
+          "name": "writing-beats",
+          "files": 2
+        },
+        {
+          "name": "writing-fragments",
+          "files": 2
+        },
+        {
+          "name": "writing-shape",
+          "files": 2
+        }
+      ],
+      "total_files": 13
+    },
+    "misc": {
+      "skills": [
+        {
+          "name": "git-guardrails-claude-code",
+          "files": 3
+        },
+        {
+          "name": "migrate-to-shoehorn",
+          "files": 2
+        },
+        {
+          "name": "scaffold-exercises",
+          "files": 2
+        },
+        {
+          "name": "setup-pre-commit",
+          "files": 2
+        }
+      ],
+      "total_files": 9
+    }
+  },
+  "infra": {
+    "copied": [
+      ".agents/adr/0002-ship-as-a-claude-code-plugin.md",
+      ".agents/install-block.md",
+      ".agents/invocation.md",
+      ".agents/writing-docs.md",
+      ".changeset/README.md",
+      ".changeset/config.json",
+      ".changeset/domain-modeling-trigger-context-adr.md",
+      ".changeset/fix-yaml-frontmatter-colons.md",
+      ".changeset/graduate-implement-spec.md",
+      ".changeset/graduate-pr.md",
+      ".changeset/graduate-retro.md",
+      ".changeset/grilling-add-hr-between-questions.md",
+      ".changeset/grilling-remove-em-dashes.md",
+      ".changeset/remove-em-dashes-repo-wide.md",
+      ".changeset/remove-resolving-merge-conflicts.md",
+      ".changeset/rename-context-to-glossary.md",
+      ".changeset/skill-tool-invocation-terminology.md",
+      ".changeset/user-invoked-skill-invocation.md",
+      ".changeset/wait-what-context-map.md",
+      ".claude-plugin/marketplace.json",
+      ".claude-plugin/plugin.json",
+      ".out-of-scope/mainstream-issue-trackers-only.md",
+      ".out-of-scope/question-limits.md",
+      ".out-of-scope/setup-skill-verify-mode.md",
+      "AGENTS.md",
+      "CHANGELOG.md",
+      "CLAUDE.md",
+      "GLOSSARY.md",
+      "README.md",
+      "docs/engineering/ask-matt.md",
+      "docs/engineering/code-review.md",
+      "docs/engineering/codebase-design.md",
+      "docs/engineering/diagnosing-bugs.md",
+      "docs/engineering/domain-modeling.md",
+      "docs/engineering/grill-with-docs.md",
+      "docs/engineering/implement-spec.md",
+      "docs/engineering/implement.md",
+      "docs/engineering/improve-codebase-architecture.md",
+      "docs/engineering/pr.md",
+      "docs/engineering/prototype.md",
+      "docs/engineering/research.md",
+      "docs/engineering/resolving-merge-conflicts.md",
+      "docs/engineering/retro.md",
+      "docs/engineering/setup-matt-pocock-skills.md",
+      "docs/engineering/tdd.md",
+      "docs/engineering/to-spec.md",
+      "docs/engineering/to-tickets.md",
+      "docs/engineering/triage.md",
+      "docs/engineering/wayfinder.md",
+      "docs/engineering/wizard.md",
+      "docs/productivity/grill-me.md",
+      "docs/productivity/grilling.md",
+      "docs/productivity/handoff.md",
+      "docs/productivity/teach.md",
+      "docs/productivity/to-questionnaire.md",
+      "docs/productivity/wait-what.md",
+      "docs/productivity/writing-for-agents.md",
+      "package-lock.json",
+      "package.json",
+      "scripts/link-skills.sh",
+      "skills/deprecated/README.md",
+      "skills/engineering/README.md",
+      "skills/in-progress/README.md",
+      "skills/misc/README.md",
+      "skills/productivity/README.md"
+    ],
+    "missing": []
+  }
+}
