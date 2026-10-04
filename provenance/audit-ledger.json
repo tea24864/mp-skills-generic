@@ -1,1387 +1,1417 @@
 {
-  "generated": "2026-10-03",
-  "source_revision": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
-  "source_release": "v1.3 (merge of PR #1120); package.json says 1.2.3 - version drift, not authoritative",
-  "scope": "27 promoted skills (20 engineering, 7 productivity), 79 staged files under upstream/mattpocock-skills/skills/",
-  "disposition_semantics": {
-    "adapted": "body requires slot insertion and/or runtime-token stripping; meaning preserved",
-    "preserved": "no runtime dependency found anywhere in the file; body transports verbatim (a uniform port frontmatter envelope - mp- name, license, author/source metadata - is still added at build time and does not count as adaptation)",
-    "metadata-only": "body is clean; the only runtime-specific content lives in frontmatter (disable-model-invocation / argument-hint), recorded as documented metadata each adapter resolves",
-    "preserved-byte-identical": "carrier file installed byte-for-byte (verified; wizard/template.sh and diagnosing-bugs/scripts/hitl-loop.template.sh per handoff)",
-    "adapted-with-parent": "carrier shares the parent skill's runtime constructs and follows the parent's disposition",
-    "reference-only": "pure reference/seed content with no host tokens of its own; installs with the skill as carried reference, needs no adaptation. NOT the handoff's 'reference-only stash' meaning, which applies to never-installed upstream infra (in reference-only/ infra tree)"
-  },
-  "token_scan": {
-    "tokens_searched": [
-      "disable-model-invocation",
-      "CLAUDE.md",
-      "AGENTS.md",
-      "gh <cmd> (strict word-boundary regex; the loose 'gh ' substring had 98 noisy matches incl. 'through')",
-      "Skill tool",
-      "subagent",
-      "sub-agent",
-      "Task tool",
-      ".claude",
-      ".agents",
-      "background agent (supplementary)"
-    ],
-    "zero_hits": [
-      "Task tool",
-      ".claude",
-      ".agents"
-    ],
-    "disable-model-invocation_frontmatter_count": 16,
-    "strict_gh_command_lines": 31,
-    "evidence_entries": 128,
-    "note": "Each skill entry lists excerpted evidence with file + line. 'gh' hits concentrate in setup-matt-pocock-skills seed templates (by design: user-chosen tracker config) and wizard/template.sh (guarded, byte-identical)."
-  },
-  "byte_identity_verification": {
-    "engineering/wizard/template.sh": {
-      "prompt_read_confirmed": true,
-      "clone_vs_staged_byte_identical": true,
-      "sha256": "33cbe9dfb1d0e9185b60248a52aabed14bc64785a00cac695e302e739dd6c153",
-      "host_specific_tool_calls": "none required by template design: gh calls are guarded by `command -v gh` with in-script skip recording (SKIPPED array) so the human-run script degrades gracefully without gh"
-    },
-    "engineering/diagnosing-bugs/scripts/hitl-loop.template.sh": {
-      "prompt_read_confirmed": true,
-      "clone_vs_staged_byte_identical": true,
-      "sha256": "35103539fc36873eea36074769ad454f9379d6fc8b2dc0e26ce987fd3bfe5503",
-      "host_specific_tool_calls": "none (pure bash: tput, read, printf, grep, mktemp; no host-agent API)"
-    }
-  },
-  "dispositions_summary": {
-    "adapted": 17,
-    "preserved": 5,
-    "metadata-only": 5
-  },
-  "skills": [
-    {
-      "skill": "ask-matt",
-      "bucket": "engineering",
-      "disposition": "adapted",
-      "mp_name": "mp-ask-matt",
-      "carries": [
-        {
-          "file": "PHASE-BOUNDARIES.md",
-          "role": "phase-boundary decision tree the router points at",
-          "disposition": "adapted-with-parent"
-        }
-      ],
-      "runtime_tokens_found": [
-        {
-          "file": "engineering/ask-matt/PHASE-BOUNDARIES.md",
-          "line": 5,
-          "token": "subagent/sub-agent",
-          "excerpt": "The **phase boundary** is the gap between two phases, and it is the only place this decision belongs. Mid-phase there is no decision to make: continue, or split the work "
-        },
-        {
-          "file": "engineering/ask-matt/PHASE-BOUNDARIES.md",
-          "line": 14,
-          "token": "subagent/sub-agent",
-          "excerpt": "| **Subagent** | Send the task to its own context window and get a report back.     |"
-        },
-        {
-          "file": "engineering/ask-matt/PHASE-BOUNDARIES.md",
-          "line": 36,
-          "token": "subagent/sub-agent",
-          "excerpt": "**4. Can the task be done AFK?** Is it scoped tightly enough to run with you away from the keyboard, no steering? Then send it to a **subagent** and leave this session un"
-        },
-        {
-          "file": "engineering/ask-matt/SKILL.md",
-          "line": 4,
-          "token": "disable-model-invocation",
-          "excerpt": "disable-model-invocation: true"
-        },
-        {
-          "file": "engineering/ask-matt/SKILL.md",
-          "line": 25,
-          "token": "subagent/sub-agent",
-          "excerpt": "- **`/implement-spec`** for the whole spec in one run. It reads the tickets as a **task graph**, runs implementer subagents across the ready **frontier** in parallel, and"
-        },
-        {
-          "file": "engineering/ask-matt/SKILL.md",
-          "line": 74,
-          "token": "subagent/sub-agent",
-          "excerpt": "- **Subagent**: send a tightly-scoped task to its own window and get a report back."
-        },
-        {
-          "file": "engineering/ask-matt/SKILL.md",
-          "line": 77,
-          "token": "subagent/sub-agent",
-          "excerpt": "Read [PHASE-BOUNDARIES.md](PHASE-BOUNDARIES.md) for the ordered tree: the five questions, the reasoning behind each branch, and why the primary-source cost makes **Contin"
-        },
-        {
-          "file": "engineering/ask-matt/SKILL.md",
-          "line": 86,
-          "token": "background agent",
-          "excerpt": "- **`/research`**: delegate reading legwork to a **background agent**: it investigates a question against **primary sources**, then leaves a cited Markdown file in the re"
-        },
-        {
-          "file": "engineering/ask-matt/SKILL.md",
-          "line": 91,
-          "token": "AGENTS.md",
-          "excerpt": "- **`/writing-for-agents`** is the reference for writing documents agents consume: skills, AGENTS.md, pointed-at docs."
-        }
-      ],
-      "needs_slots": [
-        "skill_loading",
-        "delegation",
-        "delegation-fallback",
-        "history"
-      ],
-      "user_config_dependencies": [],
-      "audit_note": "Router must be rewritten to reference mp-* names throughout (handoff design decision 2). Phase-boundary options include /clear, /compact and a subagent hand-off: host motion words that need the history/delegation slots. Smart-zone sizes (~150k) are runtime claims carried in prose."
-    },
-    {
-      "skill": "code-review",
-      "bucket": "engineering",
-      "disposition": "adapted",
-      "mp_name": "mp-code-review",
-      "carries": [],
-      "runtime_tokens_found": [
-        {
-          "file": "engineering/code-review/SKILL.md",
-          "line": 3,
-          "token": "subagent/sub-agent",
-          "excerpt": "description: \"Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding st"
-        },
-        {
-          "file": "engineering/code-review/SKILL.md",
-          "line": 11,
-          "token": "subagent/sub-agent",
-          "excerpt": "Both axes run as **parallel sub-agents** so they don't pollute each other's context, then this skill aggregates their findings."
-        },
-        {
-          "file": "engineering/code-review/SKILL.md",
-          "line": 23,
-          "token": "subagent/sub-agent",
-          "excerpt": "Before going further, confirm the fixed point resolves (`git rev-parse <fixed-point>`) and the diff is non-empty. A bad ref or empty diff should fail here, not inside two"
-        },
-        {
-          "file": "engineering/code-review/SKILL.md",
-          "line": 32,
-          "token": "subagent/sub-agent",
-          "excerpt": "4. If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report \"no spec available\"."
-        },
-        {
-          "file": "engineering/code-review/SKILL.md",
-          "line": 58,
-          "token": "subagent/sub-agent",
-          "excerpt": "### 4. Spawn both sub-agents in parallel"
-        },
-        {
-          "file": "engineering/code-review/SKILL.md",
-          "line": 60,
-          "token": "subagent/sub-agent",
-          "excerpt": "**Standards sub-agent prompt** should include:"
-        },
-        {
-          "file": "engineering/code-review/SKILL.md",
-          "line": 63,
-          "token": "subagent/sub-agent",
-          "excerpt": "- The list of standards-source files you found in step 3, **plus the smell baseline from step 3** pasted in full (the sub-agent has no other access to it)."
-        },
-        {
-          "file": "engineering/code-review/SKILL.md",
-          "line": 66,
-          "token": "subagent/sub-agent",
-          "excerpt": "**Spec sub-agent prompt** should include:"
-        },
-        {
-          "file": "engineering/code-review/SKILL.md",
-          "line": 72,
-          "token": "subagent/sub-agent",
-          "excerpt": "If the spec is missing, skip the Spec sub-agent and note this in the final report."
-        }
-      ],
-      "needs_slots": [
-        "delegation",
-        "delegation-fallback"
-      ],
-      "user_config_dependencies": [
-        "docs/agents/issue-tracker.md (written by setup-matt-pocock-skills)"
-      ],
-      "audit_note": "Defining behavior is two parallel sub-agents re-aggregated; needs a delegation slot plus an explicit sequential fallback (run Standards then Spec in one context, same-model caveat). Insists the fixed point resolves before spawning, so the fallback differs from the parallel path only in execution, not in findings format."
-    },
-    {
-      "skill": "codebase-design",
-      "bucket": "engineering",
-      "disposition": "adapted",
-      "mp_name": "mp-codebase-design",
-      "carries": [
-        {
-          "file": "DEEPENING.md",
-          "role": "dependency categories, seam discipline, replace-don't-layer testing",
-          "disposition": "adapted-with-parent"
-        },
-        {
-          "file": "DESIGN-IT-TWICE.md",
-          "role": "parallel 3+ sub-agent design pattern",
-          "disposition": "adapted-with-parent"
-        }
-      ],
-      "runtime_tokens_found": [
-        {
-          "file": "engineering/codebase-design/DESIGN-IT-TWICE.md",
-          "line": 3,
-          "token": "subagent/sub-agent",
-          "excerpt": "When the user wants to explore alternative interfaces for a chosen deepening candidate, use this parallel sub-agent pattern. Based on \"Design It Twice\" (Ousterhout): your"
-        },
-        {
-          "file": "engineering/codebase-design/DESIGN-IT-TWICE.md",
-          "line": 11,
-          "token": "subagent/sub-agent",
-          "excerpt": "Before spawning sub-agents, write a user-facing explanation of the problem space for the chosen candidate:"
-        },
-        {
-          "file": "engineering/codebase-design/DESIGN-IT-TWICE.md",
-          "line": 17,
-          "token": "subagent/sub-agent",
-          "excerpt": "Show this to the user, then immediately proceed to Step 2. The user reads and thinks while the sub-agents work in parallel."
-        },
-        {
-          "file": "engineering/codebase-design/DESIGN-IT-TWICE.md",
-          "line": 19,
-          "token": "subagent/sub-agent",
-          "excerpt": "### 2. Spawn sub-agents"
-        },
-        {
-          "file": "engineering/codebase-design/DESIGN-IT-TWICE.md",
-          "line": 21,
-          "token": "subagent/sub-agent",
-          "excerpt": "Spawn 3+ sub-agents in parallel. Each must produce a **radically different** interface for the deepened module."
-        },
-        {
-          "file": "engineering/codebase-design/DESIGN-IT-TWICE.md",
-          "line": 23,
-          "token": "subagent/sub-agent",
-          "excerpt": "Prompt each sub-agent with a separate technical brief (file paths, coupling details, dependency category from [DEEPENING.md](DEEPENING.md), what sits behind the seam). Th"
-        },
-        {
-          "file": "engineering/codebase-design/DESIGN-IT-TWICE.md",
-          "line": 30,
-          "token": "subagent/sub-agent",
-          "excerpt": "Include both [SKILL.md](SKILL.md) vocabulary and GLOSSARY.md vocabulary in the brief so each sub-agent names things consistently with the architecture language and the pr"
-        },
-        {
-          "file": "engineering/codebase-design/DESIGN-IT-TWICE.md",
-          "line": 32,
-          "token": "subagent/sub-agent",
-          "excerpt": "Each sub-agent outputs:"
-        },
-        {
-          "file": "engineering/codebase-design/SKILL.md",
-          "line": 114,
-          "token": "subagent/sub-agent",
-          "excerpt": "- **Exploring alternative interfaces**, see [DESIGN-IT-TWICE.md](DESIGN-IT-TWICE.md): spin up parallel sub-agents to design the interface several radically different ways"
-        }
-      ],
-      "needs_slots": [
-        "delegation",
-        "delegation-fallback"
-      ],
-      "user_config_dependencies": [
-        "GLOSSARY.md / docs/adr/ (created lazily by domain-modeling)"
-      ],
-      "audit_note": "SKILL.md is pure vocabulary; the coupling is only the 'Going deeper' pointer to DESIGN-IT-TWICE's parallel sub-agents. DEEPENING.md itself is token-free (could ride as reference-only); DESIGN-IT-TWICE.md delegates for its entire step 2 and must gain the serial fallback."
-    },
-    {
-      "skill": "diagnosing-bugs",
-      "bucket": "engineering",
-      "disposition": "preserved",
-      "mp_name": "mp-diagnosing-bugs",
-      "carries": [
-        {
-          "file": "scripts/hitl-loop.template.sh",
-          "role": "human-in-the-loop replay script the agent edits and runs",
-          "disposition": "preserved-byte-identical"
-        }
-      ],
-      "runtime_tokens_found": [],
-      "needs_slots": [],
-      "user_config_dependencies": [],
-      "audit_note": "Phases presume only file/terminal tools plus git bisect, curl, a headless browser - all user toolchain, no host API. Byte-identity claim for the HITL template verified (no host-specific tool calls; pure bash read/printf)."
-    },
-    {
-      "skill": "domain-modeling",
-      "bucket": "engineering",
-      "disposition": "preserved",
-      "mp_name": "mp-domain-modeling",
-      "carries": [
-        {
-          "file": "ADR-FORMAT.md",
-          "role": "ADR template and offering rules",
-          "disposition": "reference-only"
-        },
-        {
-          "file": "GLOSSARY-FORMAT.md",
-          "role": "glossary structure and rules",
-          "disposition": "reference-only"
-        }
-      ],
-      "runtime_tokens_found": [],
-      "needs_slots": [],
-      "user_config_dependencies": [
-        "GLOSSARY.md / GLOSSARY-MAP.md / docs/adr/ (it creates them lazily inside the project)"
-      ],
-      "audit_note": "Writes only inside the project (GLOSSARY.md, docs/adr/). No host tokens anywhere in SKILL.md or its carriers."
-    },
-    {
-      "skill": "grill-with-docs",
-      "bucket": "engineering",
-      "disposition": "adapted",
-      "mp_name": "mp-grill-with-docs",
-      "carries": [],
-      "runtime_tokens_found": [
-        {
-          "file": "engineering/grill-with-docs/SKILL.md",
-          "line": 4,
-          "token": "disable-model-invocation",
-          "excerpt": "disable-model-invocation: true"
-        },
-        {
-          "file": "engineering/grill-with-docs/SKILL.md",
-          "line": 7,
-          "token": "Skill tool",
-          "excerpt": "Call the Skill tool twice, for \"grilling\" and \"domain-modeling\"."
-        }
-      ],
-      "needs_slots": [
-        "skill_loading"
-      ],
-      "user_config_dependencies": [
-        "GLOSSARY.md / docs/adr/ (via domain-modeling side effects)"
-      ],
-      "audit_note": "One-line router whose body IS a Skill-tool invocation (grilling + domain-modeling): the invocation sentence is the whole runtime dependence."
-    },
-    {
-      "skill": "implement",
-      "bucket": "engineering",
-      "disposition": "adapted",
-      "mp_name": "mp-implement",
-      "carries": [],
-      "runtime_tokens_found": [
-        {
-          "file": "engineering/implement/SKILL.md",
-          "line": 4,
-          "token": "disable-model-invocation",
-          "excerpt": "disable-model-invocation: true"
-        }
-      ],
-      "needs_slots": [
-        "skill_loading"
-      ],
-      "user_config_dependencies": [
-        "spec/tickets supplied by the user"
-      ],
-      "audit_note": "Tiny runner; body references /tdd and /code-review by name (prefixed mechanically at build). Commits to the current branch. No other tokens."
-    },
-    {
-      "skill": "implement-spec",
-      "bucket": "engineering",
-      "disposition": "adapted",
-      "mp_name": "mp-implement-spec",
-      "carries": [],
-      "runtime_tokens_found": [
-        {
-          "file": "engineering/implement-spec/SKILL.md",
-          "line": 4,
-          "token": "disable-model-invocation",
-          "excerpt": "disable-model-invocation: true"
-        },
-        {
-          "file": "engineering/implement-spec/SKILL.md",
-          "line": 15,
-          "token": "subagent/sub-agent",
-          "excerpt": "Communication to and from subagents should be sparse. Communicate primarily through **context pointers**: to the spec, tickets, research notes, and previous commits. Don'"
-        },
-        {
-          "file": "engineering/implement-spec/SKILL.md",
-          "line": 17,
-          "token": "subagent/sub-agent",
-          "excerpt": "**Implementer subagents** should be run in the background where possible for maximum concurrency."
-        },
-        {
-          "file": "engineering/implement-spec/SKILL.md",
-          "line": 23,
-          "token": "subagent/sub-agent",
-          "excerpt": "2. (optional) Use an **exploration subagent** to conduct any exploration required by the tickets - relevant codebase files or external documentation. Ensure the explorati"
-        },
-        {
-          "file": "engineering/implement-spec/SKILL.md",
-          "line": 27,
-          "token": "subagent/sub-agent",
-          "excerpt": "4. Use **implementer subagents** to implement each ticket, each in its own worktree on its own branch. Each implementer subagent:"
-        },
-        {
-          "file": "engineering/implement-spec/SKILL.md",
-          "line": 29,
-          "token": "Skill tool",
-          "excerpt": "- calls the Skill tool with `tdd` to build the ticket;"
-        },
-        {
-          "file": "engineering/implement-spec/SKILL.md",
-          "line": 32,
-          "token": "subagent/sub-agent",
-          "excerpt": "5. Once an **implementer subagent** completes, merge its work to the integration branch with a **merger subagent**."
-        },
-        {
-          "file": "engineering/implement-spec/SKILL.md",
-          "line": 34,
-          "token": "subagent/sub-agent",
-          "excerpt": "6. If this changes the **frontier** of available tickets, kick off more **implementer subagents** to work on the new tickets. This allows for maximum concurrency."
-        },
-        {
-          "file": "engineering/implement-spec/SKILL.md",
-          "line": 36,
-          "token": "Skill tool",
-          "excerpt": "7. Once all tickets are complete, call the Skill tool with `code-review` on the integration branch. Fix all issues raised by the code review in a single **implementer sub"
-        },
-        {
-          "file": "engineering/implement-spec/SKILL.md",
-          "line": 36,
-          "token": "subagent/sub-agent",
-          "excerpt": "7. Once all tickets are complete, call the Skill tool with `code-review` on the integration branch. Fix all issues raised by the code review in a single **implementer sub"
-        },
-        {
-          "file": "engineering/implement-spec/SKILL.md",
-          "line": 40,
-          "token": "subagent/sub-agent",
-          "excerpt": "9. Clean up all **implementer subagent** worktrees."
-        }
-      ],
-      "needs_slots": [
-        "delegation",
-        "delegation-fallback",
-        "task_tracking",
-        "skill_loading"
-      ],
-      "user_config_dependencies": [
-        "issue tracker config; worktree-capable git"
-      ],
-      "audit_note": "Highest runtime dependence after wayfinder: background implementer subagents, explorer subagent with a notes dir outside the repo, merger subagent, Skill-tool calls into tdd/code-review, worktrees per ticket. Needs the delegation slot, a task_tracking slot for frontier semantics, and an explicit serial fallback (one ticket at a time in-session, frontier order preserved)."
-    },
-    {
-      "skill": "improve-codebase-architecture",
-      "bucket": "engineering",
-      "disposition": "adapted",
-      "mp_name": "mp-improve-codebase-architecture",
-      "carries": [
-        {
-          "file": "HTML-REPORT.md",
-          "role": "HTML report scaffold, diagram patterns, style guide",
-          "disposition": "reference-only"
-        }
-      ],
-      "runtime_tokens_found": [
-        {
-          "file": "engineering/improve-codebase-architecture/SKILL.md",
-          "line": 4,
-          "token": "disable-model-invocation",
-          "excerpt": "disable-model-invocation: true"
-        },
-        {
-          "file": "engineering/improve-codebase-architecture/SKILL.md",
-          "line": 13,
-          "token": "Skill tool",
-          "excerpt": "- Call the Skill tool with \"codebase-design\" for the architecture vocabulary (**module**, **interface**, **depth**, **seam**, **adapter**, **leverage**, **locality**) and"
-        },
-        {
-          "file": "engineering/improve-codebase-architecture/SKILL.md",
-          "line": 27,
-          "token": "subagent/sub-agent",
-          "excerpt": "Then spawn a sub-agent to walk the codebase. Don't follow rigid heuristics; explore organically and note where you experience friction:"
-        },
-        {
-          "file": "engineering/improve-codebase-architecture/SKILL.md",
-          "line": 64,
-          "token": "Skill tool",
-          "excerpt": "Once the user picks a candidate, call the Skill tool with \"grilling\" to walk the decision tree with them: constraints, dependencies, the shape of the deepened module, wha"
-        },
-        {
-          "file": "engineering/improve-codebase-architecture/SKILL.md",
-          "line": 66,
-          "token": "Skill tool",
-          "excerpt": "Side effects happen inline as decisions crystallize; call the Skill tool with \"domain-modeling\" to keep the domain model current as you go:"
-        },
-        {
-          "file": "engineering/improve-codebase-architecture/SKILL.md",
-          "line": 71,
-          "token": "Skill tool",
-          "excerpt": "- **Want to explore alternative interfaces for the deepened module?** Call the Skill tool with \"codebase-design\" and use its design-it-twice parallel sub-agent pattern."
-        },
-        {
-          "file": "engineering/improve-codebase-architecture/SKILL.md",
-          "line": 71,
-          "token": "subagent/sub-agent",
-          "excerpt": "- **Want to explore alternative interfaces for the deepened module?** Call the Skill tool with \"codebase-design\" and use its design-it-twice parallel sub-agent pattern."
-        }
-      ],
-      "needs_slots": [
-        "delegation",
-        "delegation-fallback",
-        "skill_loading"
-      ],
-      "user_config_dependencies": [
-        "GLOSSARY.md / docs/adr/ (read opportunistically)"
-      ],
-      "audit_note": "Skill-tool calls (codebase-design, grilling, domain-modeling), a spawned codebase-walker sub-agent, and design-it-twice sub-agents. Writes a self-contained HTML report to the OS temp dir and opens it (xdg-open/open/start) - benign, user-facing, recorded as side-effect evidence rather than a portability blocker. Serial fallback: walker and design-it-twice run inline."
-    },
-    {
-      "skill": "pr",
-      "bucket": "engineering",
-      "disposition": "preserved",
-      "mp_name": "mp-pr",
-      "carries": [
-        {
-          "file": "CREDITS.md",
-          "role": "attribution to Dex Horthy / Humanlayer for the visual-menu content - preserve verbatim",
-          "disposition": "reference-only"
-        }
-      ],
-      "runtime_tokens_found": [],
-      "needs_slots": [],
-      "user_config_dependencies": [
-        "GLOSSARY.md (domain language for the body)"
-      ],
-      "audit_note": "Pure PR-body template; CREDITS.md travels with it and must not be paraphrased (handoff requirement to preserve the credit)."
-    },
-    {
-      "skill": "prototype",
-      "bucket": "engineering",
-      "disposition": "preserved",
-      "mp_name": "mp-prototype",
-      "carries": [
-        {
-          "file": "LOGIC.md",
-          "role": "logic/state-machine prototype branch",
-          "disposition": "reference-only"
-        },
-        {
-          "file": "UI.md",
-          "role": "UI-prototype branch (variants on a route)",
-          "disposition": "reference-only"
-        }
-      ],
-      "runtime_tokens_found": [],
-      "needs_slots": [],
-      "user_config_dependencies": [],
-      "audit_note": "Throwaway-code discipline names only project tooling. UI.md's framework examples (Next router, process.env.NODE_ENV) are project-level, not host-runtime."
-    },
-    {
-      "skill": "research",
-      "bucket": "engineering",
-      "disposition": "adapted",
-      "mp_name": "mp-research",
-      "carries": [],
-      "runtime_tokens_found": [
-        {
-          "file": "engineering/research/SKILL.md",
-          "line": 3,
-          "token": "background agent",
-          "excerpt": "description: Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched"
-        },
-        {
-          "file": "engineering/research/SKILL.md",
-          "line": 6,
-          "token": "background agent",
-          "excerpt": "Spin up a **background agent** to do the research, so you keep working while it reads."
-        }
-      ],
-      "needs_slots": [
-        "delegation",
-        "delegation-fallback"
-      ],
-      "user_config_dependencies": [],
-      "audit_note": "The entire skill is 'spin up a background agent'. Needs the delegation slot plus a trivial serial fallback (do the reading inline in this session, still write the cited markdown file into the repo)."
-    },
-    {
-      "skill": "retro",
-      "bucket": "engineering",
-      "disposition": "adapted",
-      "mp_name": "mp-retro",
-      "carries": [],
-      "runtime_tokens_found": [
-        {
-          "file": "engineering/retro/SKILL.md",
-          "line": 4,
-          "token": "disable-model-invocation",
-          "excerpt": "disable-model-invocation: true"
-        },
-        {
-          "file": "engineering/retro/SKILL.md",
-          "line": 11,
-          "token": "Skill tool",
-          "excerpt": "1. Call the Skill tool with `writing-for-agents` for the writing style guide."
-        },
-        {
-          "file": "engineering/retro/SKILL.md",
-          "line": 20,
-          "token": "AGENTS.md",
-          "excerpt": "- **Global AGENTS.md**: are there any steering instructions that should be moved to coding standards (or automated checks) instead? _Use when_ the AGENTS.md file is parti"
-        },
-        {
-          "file": "engineering/retro/SKILL.md",
-          "line": 41,
-          "token": "CLAUDE.md",
-          "excerpt": "- `CLAUDE.md`/`AGENTS.md`: these files are pushed to the context window of any agent working in this repo. They should be used incredibly sparingly, usually only for **na"
-        },
-        {
-          "file": "engineering/retro/SKILL.md",
-          "line": 41,
-          "token": "AGENTS.md",
-          "excerpt": "- `CLAUDE.md`/`AGENTS.md`: these files are pushed to the context window of any agent working in this repo. They should be used incredibly sparingly, usually only for **na"
-        }
-      ],
-      "needs_slots": [
-        "skill_loading",
-        "history",
-        "configuration"
-      ],
-      "user_config_dependencies": [
-        "session log / transcript location (host-specific); repo steering files; name of the repo's own agent-instruction file"
-      ],
-      "audit_note": "Skill-tool call into writing-for-agents; reads session logs on the host (history slot); its candidate category 'Global AGENTS.md' hardcodes AGENTS.md and needs the same configurable-instruction-file treatment as setup-matt-pocock-skills (configuration slot)."
-    },
-    {
-      "skill": "setup-matt-pocock-skills",
-      "bucket": "engineering",
-      "disposition": "adapted",
-      "mp_name": "mp-setup-matt-pocock-skills",
-      "carries": [
-        {
-          "file": "domain.md",
-          "role": "domain-doc consumer rules seed template",
-          "disposition": "reference-only"
-        },
-        {
-          "file": "issue-tracker-github.md",
-          "role": "GitHub tracker seed template",
-          "disposition": "reference-only"
-        },
-        {
-          "file": "issue-tracker-gitlab.md",
-          "role": "GitLab tracker seed template",
-          "disposition": "reference-only"
-        },
-        {
-          "file": "issue-tracker-local.md",
-          "role": "local-markdown tracker seed template",
-          "disposition": "reference-only"
-        },
-        {
-          "file": "triage-labels.md",
-          "role": "triage label mapping seed template",
-          "disposition": "reference-only"
-        }
-      ],
-      "runtime_tokens_found": [
-        {
-          "file": "engineering/setup-matt-pocock-skills/SKILL.md",
-          "line": 4,
-          "token": "disable-model-invocation",
-          "excerpt": "disable-model-invocation: true"
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/SKILL.md",
-          "line": 24,
-          "token": "CLAUDE.md",
-          "excerpt": "- `AGENTS.md` and `CLAUDE.md` at the repo root: does either exist? Is there already an `## Agent skills` section in either?"
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/SKILL.md",
-          "line": 24,
-          "token": "AGENTS.md",
-          "excerpt": "- `AGENTS.md` and `CLAUDE.md` at the repo root: does either exist? Is there already an `## Agent skills` section in either?"
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/SKILL.md",
-          "line": 40,
-          "token": "gh <cmd>",
-          "excerpt": "> Explainer: The \"issue tracker\" is where issues live for this repo. Skills like `to-tickets`, `triage`, and `to-spec` read from and write to it. They need to know whethe"
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/SKILL.md",
-          "line": 67,
-          "token": "CLAUDE.md",
-          "excerpt": "- The `## Agent skills` block to add to whichever of `CLAUDE.md` / `AGENTS.md` is being edited (see step 4 for selection rules)"
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/SKILL.md",
-          "line": 67,
-          "token": "AGENTS.md",
-          "excerpt": "- The `## Agent skills` block to add to whichever of `CLAUDE.md` / `AGENTS.md` is being edited (see step 4 for selection rules)"
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/SKILL.md",
-          "line": 76,
-          "token": "CLAUDE.md",
-          "excerpt": "- If `CLAUDE.md` exists, edit it."
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/SKILL.md",
-          "line": 77,
-          "token": "AGENTS.md",
-          "excerpt": "- Else if `AGENTS.md` exists, edit it."
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/SKILL.md",
-          "line": 80,
-          "token": "CLAUDE.md",
-          "excerpt": "Never create `AGENTS.md` when `CLAUDE.md` already exists (or vice versa); always edit the one that's already there."
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/SKILL.md",
-          "line": 80,
-          "token": "AGENTS.md",
-          "excerpt": "Never create `AGENTS.md` when `CLAUDE.md` already exists (or vice versa); always edit the one that's already there."
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 7,
-          "token": "gh <cmd>",
-          "excerpt": "- **Create an issue**: `gh issue create --title \"...\" --body \"...\"`. Use a heredoc for multi-line bodies."
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 8,
-          "token": "gh <cmd>",
-          "excerpt": "- **Read an issue**: `gh issue view <number> --comments`, filtering comments by `jq` and also fetching labels."
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 9,
-          "token": "gh <cmd>",
-          "excerpt": "- **List issues**: `gh issue list --state open --json number,title,body,labels,comments --jq '[.[] | {number, title, body, labels: [.labels[].name], comments: [.comments["
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 10,
-          "token": "gh <cmd>",
-          "excerpt": "- **Comment on an issue**: `gh issue comment <number> --body \"...\"`"
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 11,
-          "token": "gh <cmd>",
-          "excerpt": "- **Apply / remove labels**: `gh issue edit <number> --add-label \"...\"` / `--remove-label \"...\"`"
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 12,
-          "token": "gh <cmd>",
-          "excerpt": "- **Close**: `gh issue close <number> --comment \"...\"`"
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 20,
-          "token": "gh <cmd>",
-          "excerpt": "When set to `yes`, PRs run through the same labels and states as issues, using the `gh pr` equivalents:"
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 22,
-          "token": "gh <cmd>",
-          "excerpt": "- **Read a PR**: `gh pr view <number> --comments` and `gh pr diff <number>` for the diff."
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 23,
-          "token": "gh <cmd>",
-          "excerpt": "- **List external PRs for triage**: `gh pr list --state open --json number,title,body,labels,author,authorAssociation,comments` then keep only `authorAssociation` of `CON"
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 24,
-          "token": "gh <cmd>",
-          "excerpt": "- **Comment / label / close**: `gh pr comment`, `gh pr edit --add-label`/`--remove-label`, `gh pr close`."
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 26,
-          "token": "gh <cmd>",
-          "excerpt": "GitHub shares one number space across issues and PRs, so a bare `#42` may be either: resolve with `gh pr view 42` and fall back to `gh issue view 42`."
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 34,
-          "token": "gh <cmd>",
-          "excerpt": "Run `gh issue view <number> --comments`."
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 40,
-          "token": "gh <cmd>",
-          "excerpt": "- **Map**: a single issue labelled `wayfinder:map`, holding the Notes / Decisions-so-far / Fog body. `gh issue create --label wayfinder:map`."
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 41,
-          "token": "gh <cmd>",
-          "excerpt": "- **Child ticket**: an issue linked to the map as a GitHub sub-issue (`gh api` on the sub-issues endpoint). Where sub-issues aren't enabled, add the child to a task list "
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 42,
-          "token": "gh <cmd>",
-          "excerpt": "- **Blocking**: GitHub's **native issue dependencies**, the canonical, UI-visible representation. Add an edge with `gh api --method POST repos/<owner>/<repo>/issues/<chil"
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 43,
-          "token": "gh <cmd>",
-          "excerpt": "- **Frontier query**: list the map's open children (`gh issue list --state open`, scoped to the map's sub-issues / task list), drop any with an open blocker (`issue_depen"
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 44,
-          "token": "gh <cmd>",
-          "excerpt": "- **Claim**: `gh issue edit <n> --add-assignee @me`, the session's first write."
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-          "line": 45,
-          "token": "gh <cmd>",
-          "excerpt": "- **Resolve**: `gh issue comment <n> --body \"<answer>\"`, then `gh issue close <n>`, then append a context pointer (gist + link) to the map's Decisions-so-far."
-        },
-        {
-          "file": "engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md",
-          "line": 13,
-          "token": "gh <cmd>",
-          "excerpt": "- **Merge requests**: GitLab calls PRs \"merge requests\". Use `glab mr create`, `glab mr view`, `glab mr note`, etc., the same shape as `gh pr ...` with `mr` in place of `"
-        }
-      ],
-      "needs_slots": [
-        "configuration",
-        "integrations"
-      ],
-      "user_config_dependencies": [
-        "user choice of issue tracker (GitHub/GitLab/local/other); user choice of agent-instruction file; whether the triage skill is installed"
-      ],
-      "audit_note": "Step 4 hardcodes CLAUDE.md/AGENTS.md with edit-if-exists rules. Per handoff decision, the agent-instruction file must become a configurable (user-named) file, not a hardcoded pair. gh/glab commands live inside the seed templates by design: they are the per-tracker configuration the user chose, so they travel reference-only, not as core prose."
-    },
-    {
-      "skill": "tdd",
-      "bucket": "engineering",
-      "disposition": "adapted",
-      "mp_name": "mp-tdd",
-      "carries": [
-        {
-          "file": "mocking.md",
-          "role": "when/what to mock at system boundaries",
-          "disposition": "reference-only"
-        },
-        {
-          "file": "tests.md",
-          "role": "good vs bad test examples",
-          "disposition": "reference-only"
-        }
-      ],
-      "runtime_tokens_found": [
-        {
-          "file": "engineering/tdd/SKILL.md",
-          "line": 26,
-          "token": "Skill tool",
-          "excerpt": "When the shape of that interface is itself in question (how deep the module is, where the seam belongs, what the interface should expose), call the Skill tool with \"codeb"
-        }
-      ],
-      "needs_slots": [
-        "skill_loading"
-      ],
-      "user_config_dependencies": [
-        "GLOSSARY.md / docs/adr/ (read opportunistically)"
-      ],
-      "audit_note": "Single Skill-tool call into codebase-design when the seam shape itself is the question. Everything else is neutral method."
-    },
-    {
-      "skill": "to-spec",
-      "bucket": "engineering",
-      "disposition": "metadata-only",
-      "mp_name": "mp-to-spec",
-      "carries": [],
-      "runtime_tokens_found": [
-        {
-          "file": "engineering/to-spec/SKILL.md",
-          "line": 4,
-          "token": "disable-model-invocation",
-          "excerpt": "disable-model-invocation: true"
-        }
-      ],
-      "needs_slots": [],
-      "user_config_dependencies": [
-        "issue tracker config; triage label vocabulary"
-      ],
-      "audit_note": "Body is a clean spec template; the only runtime content is frontmatter (disable-model-invocation) plus the configured-tracker/triage-label dependency it states in prose."
-    },
-    {
-      "skill": "to-tickets",
-      "bucket": "engineering",
-      "disposition": "metadata-only",
-      "mp_name": "mp-to-tickets",
-      "carries": [],
-      "runtime_tokens_found": [
-        {
-          "file": "engineering/to-tickets/SKILL.md",
-          "line": 4,
-          "token": "disable-model-invocation",
-          "excerpt": "disable-model-invocation: true"
-        }
-      ],
-      "needs_slots": [],
-      "user_config_dependencies": [
-        "issue tracker config (native blocking vs .scratch/ file convention); triage label vocabulary"
-      ],
-      "audit_note": "Body already handles both tracker shapes (local file per ticket / native blocking links). Frontmatter DMI is the only host-coupled part."
-    },
-    {
-      "skill": "triage",
-      "bucket": "engineering",
-      "disposition": "adapted",
-      "mp_name": "mp-triage",
-      "carries": [
-        {
-          "file": "AGENT-BRIEF.md",
-          "role": "agent-brief writing principles and templates",
-          "disposition": "adapted-with-parent"
-        },
-        {
-          "file": "OUT-OF-SCOPE.md",
-          "role": ".out-of-scope/ knowledge-base format and flow",
-          "disposition": "reference-only"
-        }
-      ],
-      "runtime_tokens_found": [
-        {
-          "file": "engineering/triage/AGENT-BRIEF.md",
-          "line": 32,
-          "token": "gh <cmd>",
-          "excerpt": "- **Good:** \"Running `gh issue list --label needs-triage` returns issues that have been through initial classification\""
-        },
-        {
-          "file": "engineering/triage/SKILL.md",
-          "line": 4,
-          "token": "disable-model-invocation",
-          "excerpt": "disable-model-invocation: true"
-        },
-        {
-          "file": "engineering/triage/SKILL.md",
-          "line": 76,
-          "token": "Skill tool",
-          "excerpt": "4. **Grill (if needed).** If the request needs fleshing out, call the Skill tool twice, for \"grilling\" and \"domain-modeling\", and grill it into shape a round of questions"
-        }
-      ],
-      "needs_slots": [
-        "skill_loading"
-      ],
-      "user_config_dependencies": [
-        "issue tracker config; triage label mapping; .out-of-scope/ knowledge base; external-PR surface flag"
-      ],
-      "audit_note": "Skill-tool calls (grilling, domain-modeling) when grilling is needed. AGENT-BRIEF.md quotes one gh-based acceptance-criterion example - tracker-flavoured, rides the parent's adapted disposition. OUT-OF-SCOPE.md is token-free reference."
-    },
-    {
-      "skill": "wayfinder",
-      "bucket": "engineering",
-      "disposition": "adapted",
-      "mp_name": "mp-wayfinder",
-      "carries": [],
-      "runtime_tokens_found": [
-        {
-          "file": "engineering/wayfinder/SKILL.md",
-          "line": 4,
-          "token": "disable-model-invocation",
-          "excerpt": "disable-model-invocation: true"
-        },
-        {
-          "file": "engineering/wayfinder/SKILL.md",
-          "line": 77,
-          "token": "Skill tool",
-          "excerpt": "- **Research** (AFK): Reading documentation, third-party APIs, or local resources like knowledge bases to surface a fact a decision waits on. Resolved by a subagent that "
-        },
-        {
-          "file": "engineering/wayfinder/SKILL.md",
-          "line": 77,
-          "token": "subagent/sub-agent",
-          "excerpt": "- **Research** (AFK): Reading documentation, third-party APIs, or local resources like knowledge bases to surface a fact a decision waits on. Resolved by a subagent that "
-        },
-        {
-          "file": "engineering/wayfinder/SKILL.md",
-          "line": 78,
-          "token": "Skill tool",
-          "excerpt": "- **Prototype** (HITL): Raise the fidelity of the discussion by making a cheap, rough, concrete artifact to react to (an outline, a rough take, a stub, or UI/logic code) "
-        },
-        {
-          "file": "engineering/wayfinder/SKILL.md",
-          "line": 79,
-          "token": "Skill tool",
-          "excerpt": "- **Grilling** (HITL): Conversation. The default case. Always call the Skill tool twice, for \"grilling\" and \"domain-modeling\"."
-        },
-        {
-          "file": "engineering/wayfinder/SKILL.md",
-          "line": 111,
-          "token": "Skill tool",
-          "excerpt": "1. **Name the destination.** Call the Skill tool twice, for \"grilling\" and \"domain-modeling\", to pin down what this map is finding its way to: the spec, decision, or chan"
-        },
-        {
-          "file": "engineering/wayfinder/SKILL.md",
-          "line": 115,
-          "token": "Skill tool",
-          "excerpt": "5. **Fire the research subagents.** For each `research` ticket you just created, spin up a subagent that calls the Skill tool with \"research\" to resolve it in parallel, c"
-        },
-        {
-          "file": "engineering/wayfinder/SKILL.md",
-          "line": 115,
-          "token": "subagent/sub-agent",
-          "excerpt": "5. **Fire the research subagents.** For each `research` ticket you just created, spin up a subagent that calls the Skill tool with \"research\" to resolve it in parallel, c"
-        },
-        {
-          "file": "engineering/wayfinder/SKILL.md",
-          "line": 124,
-          "token": "Skill tool",
-          "excerpt": "3. Resolve it. **Zoom as needed**: fetch the full body of any related or closed ticket on demand; call the Skill tool for whichever skills the `## Notes` block names. If "
-        }
-      ],
-      "needs_slots": [
-        "delegation",
-        "delegation-fallback",
-        "task_tracking",
-        "skill_loading"
-      ],
-      "user_config_dependencies": [
-        "issue tracker's 'Wayfinding operations' section (map, child tickets, blocking, frontier, claim, resolve)"
-      ],
-      "audit_note": "Research tickets resolve via subagents calling the Skill tool with research; grilling/prototype tickets are Skill-tool calls; map/child/blocking/frontier physical shape is tracker-owned. Needs delegation + serial fallback (resolve research tickets inline) and the task_tracking slot for frontier semantics."
-    },
-    {
-      "skill": "wizard",
-      "bucket": "engineering",
-      "disposition": "preserved",
-      "mp_name": "mp-wizard",
-      "carries": [
-        {
-          "file": "template.sh",
-          "role": "generated-wizard bash library incl. ask_secret/write_env/set_secret/set_var",
-          "disposition": "preserved-byte-identical"
-        }
-      ],
-      "runtime_tokens_found": [
-        {
-          "file": "engineering/wizard/SKILL.md",
-          "line": 10,
-          "token": "gh <cmd>",
-          "excerpt": "The delightful UX is already solved by [template.sh](template.sh): stage-by-stage progress, confirmation gates, cross-platform URL opening (including WSL), hidden secret "
-        },
-        {
-          "file": "engineering/wizard/template.sh",
-          "line": 29,
-          "token": "gh <cmd>",
-          "excerpt": "SKIPPED=()        # things we couldn't do (e.g. gh missing)"
-        },
-        {
-          "file": "engineering/wizard/template.sh",
-          "line": 142,
-          "token": "gh <cmd>",
-          "excerpt": "# to a warning (and records it) if gh is unavailable or unauthenticated."
-        },
-        {
-          "file": "engineering/wizard/template.sh",
-          "line": 145,
-          "token": "gh <cmd>",
-          "excerpt": "if command -v gh >/dev/null 2>&1 && gh auth status >/dev/null 2>&1; then"
-        },
-        {
-          "file": "engineering/wizard/template.sh",
-          "line": 146,
-          "token": "gh <cmd>",
-          "excerpt": "if printf '%s' \"$value\" | gh secret set \"$name\" >/dev/null 2>&1; then"
-        },
-        {
-          "file": "engineering/wizard/template.sh",
-          "line": 152,
-          "token": "gh <cmd>",
-          "excerpt": "SKIPPED+=(\"GitHub secret $name (set it manually: gh secret set $name)\")"
-        },
-        {
-          "file": "engineering/wizard/template.sh",
-          "line": 153,
-          "token": "gh <cmd>",
-          "excerpt": "warn \"skipped GitHub secret $name: gh not ready; set it later\""
-        },
-        {
-          "file": "engineering/wizard/template.sh",
-          "line": 159,
-          "token": "gh <cmd>",
-          "excerpt": "if command -v gh >/dev/null 2>&1 && gh auth status >/dev/null 2>&1; then"
-        },
-        {
-          "file": "engineering/wizard/template.sh",
-          "line": 160,
-          "token": "gh <cmd>",
-          "excerpt": "if gh variable set \"$name\" --body \"$value\" >/dev/null 2>&1; then"
-        },
-        {
-          "file": "engineering/wizard/template.sh",
-          "line": 166,
-          "token": "gh <cmd>",
-          "excerpt": "warn \"skipped GitHub variable $name, gh not ready; set it later\""
-        }
-      ],
-      "needs_slots": [],
-      "user_config_dependencies": [
-        "gh availability only inside the human-run script (with in-script graceful skip)"
-      ],
-      "audit_note": "Genuinely agent-neutral: the agent only authors stages; the human runs the script in their terminal. template.sh touches gh only behind command -v guards with SKIPPED recording. Byte-identity verified."
-    },
-    {
-      "skill": "grill-me",
-      "bucket": "productivity",
-      "disposition": "adapted",
-      "mp_name": "mp-grill-me",
-      "carries": [],
-      "runtime_tokens_found": [
-        {
-          "file": "productivity/grill-me/SKILL.md",
-          "line": 4,
-          "token": "disable-model-invocation",
-          "excerpt": "disable-model-invocation: true"
-        },
-        {
-          "file": "productivity/grill-me/SKILL.md",
-          "line": 7,
-          "token": "Skill tool",
-          "excerpt": "Call the Skill tool with \"grilling\"."
-        }
-      ],
-      "needs_slots": [
-        "skill_loading"
-      ],
-      "user_config_dependencies": [],
-      "audit_note": "One-line router: body is a Skill-tool invocation with 'grilling'."
-    },
-    {
-      "skill": "grilling",
-      "bucket": "productivity",
-      "disposition": "adapted",
-      "mp_name": "mp-grilling",
-      "carries": [],
-      "runtime_tokens_found": [
-        {
-          "file": "productivity/grilling/SKILL.md",
-          "line": 26,
-          "token": "subagent/sub-agent",
-          "excerpt": "Finding _facts_ is your job, never the user's. When a frontier question needs a fact from the environment (filesystem, tools, etc.), dispatch a sub-agent to find it; don'"
-        }
-      ],
-      "needs_slots": [
-        "delegation",
-        "delegation-fallback"
-      ],
-      "user_config_dependencies": [],
-      "audit_note": "'Finding facts is your job': a frontier question may dispatch a sub-agent to look things up while the interview continues. Needs the delegation slot with a serial fallback (perform the lookup with own file/terminal tools; only questions downstream of the fact wait)."
-    },
-    {
-      "skill": "handoff",
-      "bucket": "productivity",
-      "disposition": "adapted",
-      "mp_name": "mp-handoff",
-      "carries": [],
-      "runtime_tokens_found": [
-        {
-          "file": "productivity/handoff/SKILL.md",
-          "line": 4,
-          "token": "argument-hint",
-          "excerpt": "argument-hint: \"What will the next session be used for?\""
-        },
-        {
-          "file": "productivity/handoff/SKILL.md",
-          "line": 5,
-          "token": "disable-model-invocation",
-          "excerpt": "disable-model-invocation: true"
-        },
-        {
-          "file": "productivity/handoff/SKILL.md",
-          "line": 10,
-          "token": "Skill tool",
-          "excerpt": "Include a \"suggested skills\" section in the document, naming which skills the next agent should call the Skill tool for."
-        }
-      ],
-      "needs_slots": [
-        "history",
-        "skill_loading"
-      ],
-      "user_config_dependencies": [
-        "OS temp-dir convention; next agent's available skill roster"
-      ],
-      "audit_note": "Writes a handoff doc to the OS temporary directory, deliberately outside the workspace (recorded as an out-of-project side effect; per handoff scope rules this is intended behaviour, upstream-authored, question-free). 'Suggested skills' section reaches the Skill tool by name."
-    },
-    {
-      "skill": "teach",
-      "bucket": "productivity",
-      "disposition": "metadata-only",
-      "mp_name": "mp-teach",
-      "carries": [
-        {
-          "file": "GLOSSARY-FORMAT.md",
-          "role": "teaching-workspace glossary format",
-          "disposition": "reference-only"
-        },
-        {
-          "file": "LEARNING-RECORD-FORMAT.md",
-          "role": "learning-record format and triggers",
-          "disposition": "reference-only"
-        },
-        {
-          "file": "MISSION-FORMAT.md",
-          "role": "mission statement format",
-          "disposition": "reference-only"
-        },
-        {
-          "file": "RESOURCES-FORMAT.md",
-          "role": "trusted resources + communities format",
-          "disposition": "reference-only"
-        }
-      ],
-      "runtime_tokens_found": [
-        {
-          "file": "productivity/teach/SKILL.md",
-          "line": 4,
-          "token": "disable-model-invocation",
-          "excerpt": "disable-model-invocation: true"
-        },
-        {
-          "file": "productivity/teach/SKILL.md",
-          "line": 5,
-          "token": "argument-hint",
-          "excerpt": "argument-hint: \"What would you like to learn about?\""
-        }
-      ],
-      "needs_slots": [],
-      "user_config_dependencies": [
-        "all state lives in the current workspace (MISSION.md, lessons/, reference/, learning-records/, assets/, NOTES.md)"
-      ],
-      "audit_note": "Stateful but entirely in-project. 'Open the lesson by running a CLI command' is generic. Frontmatter carries disable-model-invocation + argument-hint (adapter metadata). Four format files are pure reference."
-    },
-    {
-      "skill": "to-questionnaire",
-      "bucket": "productivity",
-      "disposition": "metadata-only",
-      "mp_name": "mp-to-questionnaire",
-      "carries": [],
-      "runtime_tokens_found": [
-        {
-          "file": "productivity/to-questionnaire/SKILL.md",
-          "line": 4,
-          "token": "disable-model-invocation",
-          "excerpt": "disable-model-invocation: true"
-        }
-      ],
-      "needs_slots": [],
-      "user_config_dependencies": [],
-      "audit_note": "Writes one markdown file in the current directory. Frontmatter DMI only."
-    },
-    {
-      "skill": "wait-what",
-      "bucket": "productivity",
-      "disposition": "metadata-only",
-      "mp_name": "mp-wait-what",
-      "carries": [],
-      "runtime_tokens_found": [
-        {
-          "file": "productivity/wait-what/SKILL.md",
-          "line": 4,
-          "token": "disable-model-invocation",
-          "excerpt": "disable-model-invocation: true"
-        }
-      ],
-      "needs_slots": [],
-      "user_config_dependencies": [
-        "GLOSSARY.md / GLOSSARY-MAP.md (optional, read if present)"
-      ],
-      "audit_note": "One-paragraph corrective; frontmatter DMI only."
-    },
-    {
-      "skill": "writing-for-agents",
-      "bucket": "productivity",
-      "disposition": "adapted",
-      "mp_name": "mp-writing-for-agents",
-      "carries": [
-        {
-          "file": "SKILL-MECHANICS.md",
-          "role": "frontmatter, invocation choice, router-skill mechanics",
-          "disposition": "adapted-with-parent"
-        }
-      ],
-      "runtime_tokens_found": [
-        {
-          "file": "productivity/writing-for-agents/SKILL-MECHANICS.md",
-          "line": 9,
-          "token": "disable-model-invocation",
-          "excerpt": "- A **model-invoked** skill keeps a `description`, so the agent can fire it autonomously, and other skills can reach it. You can still type its name: model-invocation alw"
-        },
-        {
-          "file": "productivity/writing-for-agents/SKILL-MECHANICS.md",
-          "line": 10,
-          "token": "disable-model-invocation",
-          "excerpt": "- A **user-invoked** skill strips the description from the agent's reach: only the human typing its name can invoke it, and no other skill can. Zero context load, but it "
-        },
-        {
-          "file": "productivity/writing-for-agents/SKILL.md",
-          "line": 3,
-          "token": "CLAUDE.md",
-          "excerpt": "description: Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md."
-        },
-        {
-          "file": "productivity/writing-for-agents/SKILL.md",
-          "line": 3,
-          "token": "AGENTS.md",
-          "excerpt": "description: Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md."
-        },
-        {
-          "file": "productivity/writing-for-agents/SKILL.md",
-          "line": 6,
-          "token": "CLAUDE.md",
-          "excerpt": "Reference for writing any document an agent consumes: a skill, an `AGENTS.md` / `CLAUDE.md`, a doc reached by a pointer. The packaging differs; the writing does not: the "
-        },
-        {
-          "file": "productivity/writing-for-agents/SKILL.md",
-          "line": 6,
-          "token": "AGENTS.md",
-          "excerpt": "Reference for writing any document an agent consumes: a skill, an `AGENTS.md` / `CLAUDE.md`, a doc reached by a pointer. The packaging differs; the writing does not: the "
-        },
-        {
-          "file": "productivity/writing-for-agents/SKILL.md",
-          "line": 12,
-          "token": "AGENTS.md",
-          "excerpt": "A **context pointer** is a reference held in the agent's context that names some out-of-context material and encodes the condition for reaching it. A skill's description "
-        },
-        {
-          "file": "productivity/writing-for-agents/SKILL.md",
-          "line": 24,
-          "token": "AGENTS.md",
-          "excerpt": "- **Context load** is the cost of always-loaded material on the agent's window: an `AGENTS.md` line, a skill description, anything sitting in context every turn, spending"
-        },
-        {
-          "file": "productivity/writing-for-agents/SKILL.md",
-          "line": 49,
-          "token": "subagent/sub-agent",
-          "excerpt": "- **Clarity**: can the agent tell done from not-done? A vague bound (\"understanding reached\") invites **premature completion**: ending the step before it is genuinely don"
-        }
-      ],
-      "needs_slots": [
-        "skill_loading",
-        "configuration"
-      ],
-      "user_config_dependencies": [
-        "the repo's agent-instruction file name (generic examples name AGENTS.md/CLAUDE.md)"
-      ],
-      "audit_note": "No delegation. Its examples and SKILL-MECHANICS.md lean on upstream frontmatter semantics (disable-model-invocation as the invocation switch, description-stripping). Adaptation: generalize the agent-instruction-file naming and record invocation flags as documented metadata each adapter resolves; meaning preserved."
-    }
+ "generated": "2026-10-03",
+ "source_revision": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+ "source_release": "v1.3 (merge of PR #1120); package.json says 1.2.3 - version drift, not authoritative",
+ "scope": "27 promoted skills (20 engineering, 7 productivity), 79 staged files under upstream/mattpocock-skills/skills/",
+ "disposition_semantics": {
+  "adapted": "body requires slot insertion and/or runtime-token stripping; meaning preserved",
+  "preserved": "no runtime dependency found anywhere in the file; body transports verbatim (a uniform port frontmatter envelope - mp- name, license, author/source metadata - is still added at build time and does not count as adaptation)",
+  "metadata-only": "body is clean; the only runtime-specific content lives in frontmatter (disable-model-invocation / argument-hint), recorded as documented metadata each adapter resolves",
+  "preserved-byte-identical": "carrier file installed byte-for-byte (verified; wizard/template.sh and diagnosing-bugs/scripts/hitl-loop.template.sh per handoff)",
+  "adapted-with-parent": "carrier shares the parent skill's runtime constructs and follows the parent's disposition",
+  "reference-only": "pure reference/seed content with no host tokens of its own; installs with the skill as carried reference, needs no adaptation. NOT the handoff's 'reference-only stash' meaning, which applies to never-installed upstream infra (in reference-only/ infra tree)"
+ },
+ "token_scan": {
+  "tokens_searched": [
+   "disable-model-invocation",
+   "CLAUDE.md",
+   "AGENTS.md",
+   "gh <cmd> (strict word-boundary regex; the loose 'gh ' substring had 98 noisy matches incl. 'through')",
+   "Skill tool",
+   "subagent",
+   "sub-agent",
+   "Task tool",
+   ".claude",
+   ".agents",
+   "background agent (supplementary)"
   ],
-  "naming_review": {
-    "setup-matt-pocock-skills": {
-      "default": "mp-setup-matt-pocock-skills",
-      "considered_shorter": "mp-setup-skills",
-      "finding": "no shorter name adopted",
-      "reason": "routing semantics lock the long name in: 6 skill bodies (ask-matt, code-review, implement-spec, to-spec, to-tickets, triage, wayfinder) tell the user to run /setup-matt-pocock-skills, and the name itself carries attribution (Matt Pocock) in the one skill that is ABOUT adopting his skills. A shorter name would mean rewriting every router reference AND losing the attribution signal. Flagged here for the parent's confirm; nothing was chosen silently."
-    }
+  "zero_hits": [
+   "Task tool",
+   ".claude",
+   ".agents"
+  ],
+  "disable-model-invocation_frontmatter_count": 16,
+  "strict_gh_command_lines": 31,
+  "evidence_entries": 128,
+  "note": "Each skill entry lists excerpted evidence with file + line. 'gh' hits concentrate in setup-matt-pocock-skills seed templates (by design: user-chosen tracker config) and wizard/template.sh (guarded, byte-identical)."
+ },
+ "byte_identity_verification": {
+  "engineering/wizard/template.sh": {
+   "prompt_read_confirmed": true,
+   "clone_vs_staged_byte_identical": true,
+   "sha256": "33cbe9dfb1d0e9185b60248a52aabed14bc64785a00cac695e302e739dd6c153",
+   "host_specific_tool_calls": "none required by template design: gh calls are guarded by `command -v gh` with in-script skip recording (SKIPPED array) so the human-run script degrades gracefully without gh"
+  },
+  "engineering/diagnosing-bugs/scripts/hitl-loop.template.sh": {
+   "prompt_read_confirmed": true,
+   "clone_vs_staged_byte_identical": true,
+   "sha256": "35103539fc36873eea36074769ad454f9379d6fc8b2dc0e26ce987fd3bfe5503",
+   "host_specific_tool_calls": "none (pure bash: tput, read, printf, grep, mktemp; no host-agent API)"
   }
+ },
+ "dispositions_summary": {
+  "adapted": 17,
+  "preserved": 5,
+  "metadata-only": 5
+ },
+ "skills": [
+  {
+   "skill": "ask-matt",
+   "bucket": "engineering",
+   "disposition": "adapted",
+   "mp_name": "mp-ask-matt",
+   "carries": [
+    {
+     "file": "PHASE-BOUNDARIES.md",
+     "role": "phase-boundary decision tree the router points at",
+     "disposition": "adapted-with-parent"
+    }
+   ],
+   "runtime_tokens_found": [
+    {
+     "file": "engineering/ask-matt/PHASE-BOUNDARIES.md",
+     "line": 5,
+     "token": "subagent/sub-agent",
+     "excerpt": "The **phase boundary** is the gap between two phases, and it is the only place this decision belongs. Mid-phase there is no decision to make: continue, or split the work "
+    },
+    {
+     "file": "engineering/ask-matt/PHASE-BOUNDARIES.md",
+     "line": 14,
+     "token": "subagent/sub-agent",
+     "excerpt": "| **Subagent** | Send the task to its own context window and get a report back.     |"
+    },
+    {
+     "file": "engineering/ask-matt/PHASE-BOUNDARIES.md",
+     "line": 36,
+     "token": "subagent/sub-agent",
+     "excerpt": "**4. Can the task be done AFK?** Is it scoped tightly enough to run with you away from the keyboard, no steering? Then send it to a **subagent** and leave this session un"
+    },
+    {
+     "file": "engineering/ask-matt/SKILL.md",
+     "line": 4,
+     "token": "disable-model-invocation",
+     "excerpt": "disable-model-invocation: true"
+    },
+    {
+     "file": "engineering/ask-matt/SKILL.md",
+     "line": 25,
+     "token": "subagent/sub-agent",
+     "excerpt": "- **`/implement-spec`** for the whole spec in one run. It reads the tickets as a **task graph**, runs implementer subagents across the ready **frontier** in parallel, and"
+    },
+    {
+     "file": "engineering/ask-matt/SKILL.md",
+     "line": 74,
+     "token": "subagent/sub-agent",
+     "excerpt": "- **Subagent**: send a tightly-scoped task to its own window and get a report back."
+    },
+    {
+     "file": "engineering/ask-matt/SKILL.md",
+     "line": 77,
+     "token": "subagent/sub-agent",
+     "excerpt": "Read [PHASE-BOUNDARIES.md](PHASE-BOUNDARIES.md) for the ordered tree: the five questions, the reasoning behind each branch, and why the primary-source cost makes **Contin"
+    },
+    {
+     "file": "engineering/ask-matt/SKILL.md",
+     "line": 86,
+     "token": "background agent",
+     "excerpt": "- **`/research`**: delegate reading legwork to a **background agent**: it investigates a question against **primary sources**, then leaves a cited Markdown file in the re"
+    },
+    {
+     "file": "engineering/ask-matt/SKILL.md",
+     "line": 91,
+     "token": "AGENTS.md",
+     "excerpt": "- **`/writing-for-agents`** is the reference for writing documents agents consume: skills, AGENTS.md, pointed-at docs."
+    }
+   ],
+   "needs_slots": [
+    "skill_loading",
+    "delegation",
+    "delegation-fallback",
+    "history"
+   ],
+   "user_config_dependencies": [],
+   "audit_note": "Router must be rewritten to reference mp-* names throughout (handoff design decision 2). Phase-boundary options include /clear, /compact and a subagent hand-off: host motion words that need the history/delegation slots. Smart-zone sizes (~150k) are runtime claims carried in prose."
+  },
+  {
+   "skill": "code-review",
+   "bucket": "engineering",
+   "disposition": "adapted",
+   "mp_name": "mp-code-review",
+   "carries": [],
+   "runtime_tokens_found": [
+    {
+     "file": "engineering/code-review/SKILL.md",
+     "line": 3,
+     "token": "subagent/sub-agent",
+     "excerpt": "description: \"Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding st"
+    },
+    {
+     "file": "engineering/code-review/SKILL.md",
+     "line": 11,
+     "token": "subagent/sub-agent",
+     "excerpt": "Both axes run as **parallel sub-agents** so they don't pollute each other's context, then this skill aggregates their findings."
+    },
+    {
+     "file": "engineering/code-review/SKILL.md",
+     "line": 23,
+     "token": "subagent/sub-agent",
+     "excerpt": "Before going further, confirm the fixed point resolves (`git rev-parse <fixed-point>`) and the diff is non-empty. A bad ref or empty diff should fail here, not inside two"
+    },
+    {
+     "file": "engineering/code-review/SKILL.md",
+     "line": 32,
+     "token": "subagent/sub-agent",
+     "excerpt": "4. If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report \"no spec available\"."
+    },
+    {
+     "file": "engineering/code-review/SKILL.md",
+     "line": 58,
+     "token": "subagent/sub-agent",
+     "excerpt": "### 4. Spawn both sub-agents in parallel"
+    },
+    {
+     "file": "engineering/code-review/SKILL.md",
+     "line": 60,
+     "token": "subagent/sub-agent",
+     "excerpt": "**Standards sub-agent prompt** should include:"
+    },
+    {
+     "file": "engineering/code-review/SKILL.md",
+     "line": 63,
+     "token": "subagent/sub-agent",
+     "excerpt": "- The list of standards-source files you found in step 3, **plus the smell baseline from step 3** pasted in full (the sub-agent has no other access to it)."
+    },
+    {
+     "file": "engineering/code-review/SKILL.md",
+     "line": 66,
+     "token": "subagent/sub-agent",
+     "excerpt": "**Spec sub-agent prompt** should include:"
+    },
+    {
+     "file": "engineering/code-review/SKILL.md",
+     "line": 72,
+     "token": "subagent/sub-agent",
+     "excerpt": "If the spec is missing, skip the Spec sub-agent and note this in the final report."
+    }
+   ],
+   "needs_slots": [
+    "delegation",
+    "delegation-fallback"
+   ],
+   "user_config_dependencies": [
+    "docs/agents/issue-tracker.md (written by setup-matt-pocock-skills)"
+   ],
+   "audit_note": "Defining behavior is two parallel sub-agents re-aggregated; needs a delegation slot plus an explicit sequential fallback (run Standards then Spec in one context, same-model caveat). Insists the fixed point resolves before spawning, so the fallback differs from the parallel path only in execution, not in findings format."
+  },
+  {
+   "skill": "codebase-design",
+   "bucket": "engineering",
+   "disposition": "adapted",
+   "mp_name": "mp-codebase-design",
+   "carries": [
+    {
+     "file": "DEEPENING.md",
+     "role": "dependency categories, seam discipline, replace-don't-layer testing",
+     "disposition": "adapted-with-parent"
+    },
+    {
+     "file": "DESIGN-IT-TWICE.md",
+     "role": "parallel 3+ sub-agent design pattern",
+     "disposition": "adapted-with-parent"
+    }
+   ],
+   "runtime_tokens_found": [
+    {
+     "file": "engineering/codebase-design/DESIGN-IT-TWICE.md",
+     "line": 3,
+     "token": "subagent/sub-agent",
+     "excerpt": "When the user wants to explore alternative interfaces for a chosen deepening candidate, use this parallel sub-agent pattern. Based on \"Design It Twice\" (Ousterhout): your"
+    },
+    {
+     "file": "engineering/codebase-design/DESIGN-IT-TWICE.md",
+     "line": 11,
+     "token": "subagent/sub-agent",
+     "excerpt": "Before spawning sub-agents, write a user-facing explanation of the problem space for the chosen candidate:"
+    },
+    {
+     "file": "engineering/codebase-design/DESIGN-IT-TWICE.md",
+     "line": 17,
+     "token": "subagent/sub-agent",
+     "excerpt": "Show this to the user, then immediately proceed to Step 2. The user reads and thinks while the sub-agents work in parallel."
+    },
+    {
+     "file": "engineering/codebase-design/DESIGN-IT-TWICE.md",
+     "line": 19,
+     "token": "subagent/sub-agent",
+     "excerpt": "### 2. Spawn sub-agents"
+    },
+    {
+     "file": "engineering/codebase-design/DESIGN-IT-TWICE.md",
+     "line": 21,
+     "token": "subagent/sub-agent",
+     "excerpt": "Spawn 3+ sub-agents in parallel. Each must produce a **radically different** interface for the deepened module."
+    },
+    {
+     "file": "engineering/codebase-design/DESIGN-IT-TWICE.md",
+     "line": 23,
+     "token": "subagent/sub-agent",
+     "excerpt": "Prompt each sub-agent with a separate technical brief (file paths, coupling details, dependency category from [DEEPENING.md](DEEPENING.md), what sits behind the seam). Th"
+    },
+    {
+     "file": "engineering/codebase-design/DESIGN-IT-TWICE.md",
+     "line": 30,
+     "token": "subagent/sub-agent",
+     "excerpt": "Include both [SKILL.md](SKILL.md) vocabulary and GLOSSARY.md vocabulary in the brief so each sub-agent names things consistently with the architecture language and the pr"
+    },
+    {
+     "file": "engineering/codebase-design/DESIGN-IT-TWICE.md",
+     "line": 32,
+     "token": "subagent/sub-agent",
+     "excerpt": "Each sub-agent outputs:"
+    },
+    {
+     "file": "engineering/codebase-design/SKILL.md",
+     "line": 114,
+     "token": "subagent/sub-agent",
+     "excerpt": "- **Exploring alternative interfaces**, see [DESIGN-IT-TWICE.md](DESIGN-IT-TWICE.md): spin up parallel sub-agents to design the interface several radically different ways"
+    }
+   ],
+   "needs_slots": [
+    "delegation",
+    "delegation-fallback"
+   ],
+   "user_config_dependencies": [
+    "GLOSSARY.md / docs/adr/ (created lazily by domain-modeling)"
+   ],
+   "audit_note": "SKILL.md is pure vocabulary; the coupling is only the 'Going deeper' pointer to DESIGN-IT-TWICE's parallel sub-agents. DEEPENING.md itself is token-free (could ride as reference-only); DESIGN-IT-TWICE.md delegates for its entire step 2 and must gain the serial fallback."
+  },
+  {
+   "skill": "diagnosing-bugs",
+   "bucket": "engineering",
+   "disposition": "preserved",
+   "mp_name": "mp-diagnosing-bugs",
+   "carries": [
+    {
+     "file": "scripts/hitl-loop.template.sh",
+     "role": "human-in-the-loop replay script the agent edits and runs",
+     "disposition": "preserved-byte-identical"
+    }
+   ],
+   "runtime_tokens_found": [],
+   "needs_slots": [],
+   "user_config_dependencies": [],
+   "audit_note": "Phases presume only file/terminal tools plus git bisect, curl, a headless browser - all user toolchain, no host API. Byte-identity claim for the HITL template verified (no host-specific tool calls; pure bash read/printf)."
+  },
+  {
+   "skill": "domain-modeling",
+   "bucket": "engineering",
+   "disposition": "preserved",
+   "mp_name": "mp-domain-modeling",
+   "carries": [
+    {
+     "file": "ADR-FORMAT.md",
+     "role": "ADR template and offering rules",
+     "disposition": "reference-only"
+    },
+    {
+     "file": "GLOSSARY-FORMAT.md",
+     "role": "glossary structure and rules",
+     "disposition": "reference-only"
+    }
+   ],
+   "runtime_tokens_found": [],
+   "needs_slots": [],
+   "user_config_dependencies": [
+    "GLOSSARY.md / GLOSSARY-MAP.md / docs/adr/ (it creates them lazily inside the project)"
+   ],
+   "audit_note": "Writes only inside the project (GLOSSARY.md, docs/adr/). No host tokens anywhere in SKILL.md or its carriers."
+  },
+  {
+   "skill": "grill-with-docs",
+   "bucket": "engineering",
+   "disposition": "adapted",
+   "mp_name": "mp-grill-with-docs",
+   "carries": [],
+   "runtime_tokens_found": [
+    {
+     "file": "engineering/grill-with-docs/SKILL.md",
+     "line": 4,
+     "token": "disable-model-invocation",
+     "excerpt": "disable-model-invocation: true"
+    },
+    {
+     "file": "engineering/grill-with-docs/SKILL.md",
+     "line": 7,
+     "token": "Skill tool",
+     "excerpt": "Call the Skill tool twice, for \"grilling\" and \"domain-modeling\"."
+    }
+   ],
+   "needs_slots": [
+    "skill_loading"
+   ],
+   "user_config_dependencies": [
+    "GLOSSARY.md / docs/adr/ (via domain-modeling side effects)"
+   ],
+   "audit_note": "One-line router whose body IS a Skill-tool invocation (grilling + domain-modeling): the invocation sentence is the whole runtime dependence."
+  },
+  {
+   "skill": "implement",
+   "bucket": "engineering",
+   "disposition": "adapted",
+   "mp_name": "mp-implement",
+   "carries": [],
+   "runtime_tokens_found": [
+    {
+     "file": "engineering/implement/SKILL.md",
+     "line": 4,
+     "token": "disable-model-invocation",
+     "excerpt": "disable-model-invocation: true"
+    }
+   ],
+   "needs_slots": [
+    "skill_loading"
+   ],
+   "user_config_dependencies": [
+    "spec/tickets supplied by the user"
+   ],
+   "audit_note": "Tiny runner; body references /tdd and /code-review by name (prefixed mechanically at build). Commits to the current branch. No other tokens."
+  },
+  {
+   "skill": "implement-spec",
+   "bucket": "engineering",
+   "disposition": "adapted",
+   "mp_name": "mp-implement-spec",
+   "carries": [],
+   "runtime_tokens_found": [
+    {
+     "file": "engineering/implement-spec/SKILL.md",
+     "line": 4,
+     "token": "disable-model-invocation",
+     "excerpt": "disable-model-invocation: true"
+    },
+    {
+     "file": "engineering/implement-spec/SKILL.md",
+     "line": 15,
+     "token": "subagent/sub-agent",
+     "excerpt": "Communication to and from subagents should be sparse. Communicate primarily through **context pointers**: to the spec, tickets, research notes, and previous commits. Don'"
+    },
+    {
+     "file": "engineering/implement-spec/SKILL.md",
+     "line": 17,
+     "token": "subagent/sub-agent",
+     "excerpt": "**Implementer subagents** should be run in the background where possible for maximum concurrency."
+    },
+    {
+     "file": "engineering/implement-spec/SKILL.md",
+     "line": 23,
+     "token": "subagent/sub-agent",
+     "excerpt": "2. (optional) Use an **exploration subagent** to conduct any exploration required by the tickets - relevant codebase files or external documentation. Ensure the explorati"
+    },
+    {
+     "file": "engineering/implement-spec/SKILL.md",
+     "line": 27,
+     "token": "subagent/sub-agent",
+     "excerpt": "4. Use **implementer subagents** to implement each ticket, each in its own worktree on its own branch. Each implementer subagent:"
+    },
+    {
+     "file": "engineering/implement-spec/SKILL.md",
+     "line": 29,
+     "token": "Skill tool",
+     "excerpt": "- calls the Skill tool with `tdd` to build the ticket;"
+    },
+    {
+     "file": "engineering/implement-spec/SKILL.md",
+     "line": 32,
+     "token": "subagent/sub-agent",
+     "excerpt": "5. Once an **implementer subagent** completes, merge its work to the integration branch with a **merger subagent**."
+    },
+    {
+     "file": "engineering/implement-spec/SKILL.md",
+     "line": 34,
+     "token": "subagent/sub-agent",
+     "excerpt": "6. If this changes the **frontier** of available tickets, kick off more **implementer subagents** to work on the new tickets. This allows for maximum concurrency."
+    },
+    {
+     "file": "engineering/implement-spec/SKILL.md",
+     "line": 36,
+     "token": "Skill tool",
+     "excerpt": "7. Once all tickets are complete, call the Skill tool with `code-review` on the integration branch. Fix all issues raised by the code review in a single **implementer sub"
+    },
+    {
+     "file": "engineering/implement-spec/SKILL.md",
+     "line": 36,
+     "token": "subagent/sub-agent",
+     "excerpt": "7. Once all tickets are complete, call the Skill tool with `code-review` on the integration branch. Fix all issues raised by the code review in a single **implementer sub"
+    },
+    {
+     "file": "engineering/implement-spec/SKILL.md",
+     "line": 40,
+     "token": "subagent/sub-agent",
+     "excerpt": "9. Clean up all **implementer subagent** worktrees."
+    }
+   ],
+   "needs_slots": [
+    "delegation",
+    "delegation-fallback",
+    "task_tracking",
+    "skill_loading"
+   ],
+   "user_config_dependencies": [
+    "issue tracker config; worktree-capable git"
+   ],
+   "audit_note": "Highest runtime dependence after wayfinder: background implementer subagents, explorer subagent with a notes dir outside the repo, merger subagent, Skill-tool calls into tdd/code-review, worktrees per ticket. Needs the delegation slot, a task_tracking slot for frontier semantics, and an explicit serial fallback (one ticket at a time in-session, frontier order preserved)."
+  },
+  {
+   "skill": "improve-codebase-architecture",
+   "bucket": "engineering",
+   "disposition": "adapted",
+   "mp_name": "mp-improve-codebase-architecture",
+   "carries": [
+    {
+     "file": "HTML-REPORT.md",
+     "role": "HTML report scaffold, diagram patterns, style guide",
+     "disposition": "reference-only"
+    }
+   ],
+   "runtime_tokens_found": [
+    {
+     "file": "engineering/improve-codebase-architecture/SKILL.md",
+     "line": 4,
+     "token": "disable-model-invocation",
+     "excerpt": "disable-model-invocation: true"
+    },
+    {
+     "file": "engineering/improve-codebase-architecture/SKILL.md",
+     "line": 13,
+     "token": "Skill tool",
+     "excerpt": "- Call the Skill tool with \"codebase-design\" for the architecture vocabulary (**module**, **interface**, **depth**, **seam**, **adapter**, **leverage**, **locality**) and"
+    },
+    {
+     "file": "engineering/improve-codebase-architecture/SKILL.md",
+     "line": 27,
+     "token": "subagent/sub-agent",
+     "excerpt": "Then spawn a sub-agent to walk the codebase. Don't follow rigid heuristics; explore organically and note where you experience friction:"
+    },
+    {
+     "file": "engineering/improve-codebase-architecture/SKILL.md",
+     "line": 64,
+     "token": "Skill tool",
+     "excerpt": "Once the user picks a candidate, call the Skill tool with \"grilling\" to walk the decision tree with them: constraints, dependencies, the shape of the deepened module, wha"
+    },
+    {
+     "file": "engineering/improve-codebase-architecture/SKILL.md",
+     "line": 66,
+     "token": "Skill tool",
+     "excerpt": "Side effects happen inline as decisions crystallize; call the Skill tool with \"domain-modeling\" to keep the domain model current as you go:"
+    },
+    {
+     "file": "engineering/improve-codebase-architecture/SKILL.md",
+     "line": 71,
+     "token": "Skill tool",
+     "excerpt": "- **Want to explore alternative interfaces for the deepened module?** Call the Skill tool with \"codebase-design\" and use its design-it-twice parallel sub-agent pattern."
+    },
+    {
+     "file": "engineering/improve-codebase-architecture/SKILL.md",
+     "line": 71,
+     "token": "subagent/sub-agent",
+     "excerpt": "- **Want to explore alternative interfaces for the deepened module?** Call the Skill tool with \"codebase-design\" and use its design-it-twice parallel sub-agent pattern."
+    }
+   ],
+   "needs_slots": [
+    "delegation",
+    "delegation-fallback",
+    "skill_loading"
+   ],
+   "user_config_dependencies": [
+    "GLOSSARY.md / docs/adr/ (read opportunistically)"
+   ],
+   "audit_note": "Skill-tool calls (codebase-design, grilling, domain-modeling), a spawned codebase-walker sub-agent, and design-it-twice sub-agents. Writes a self-contained HTML report to the OS temp dir and opens it (xdg-open/open/start) - benign, user-facing, recorded as side-effect evidence rather than a portability blocker. Serial fallback: walker and design-it-twice run inline."
+  },
+  {
+   "skill": "pr",
+   "bucket": "engineering",
+   "disposition": "preserved",
+   "mp_name": "mp-pr",
+   "carries": [
+    {
+     "file": "CREDITS.md",
+     "role": "attribution to Dex Horthy / Humanlayer for the visual-menu content - preserve verbatim",
+     "disposition": "reference-only"
+    }
+   ],
+   "runtime_tokens_found": [],
+   "needs_slots": [],
+   "user_config_dependencies": [
+    "GLOSSARY.md (domain language for the body)"
+   ],
+   "audit_note": "Pure PR-body template; CREDITS.md travels with it and must not be paraphrased (handoff requirement to preserve the credit)."
+  },
+  {
+   "skill": "prototype",
+   "bucket": "engineering",
+   "disposition": "preserved",
+   "mp_name": "mp-prototype",
+   "carries": [
+    {
+     "file": "LOGIC.md",
+     "role": "logic/state-machine prototype branch",
+     "disposition": "reference-only"
+    },
+    {
+     "file": "UI.md",
+     "role": "UI-prototype branch (variants on a route)",
+     "disposition": "reference-only"
+    }
+   ],
+   "runtime_tokens_found": [],
+   "needs_slots": [],
+   "user_config_dependencies": [],
+   "audit_note": "Throwaway-code discipline names only project tooling. UI.md's framework examples (Next router, process.env.NODE_ENV) are project-level, not host-runtime."
+  },
+  {
+   "skill": "research",
+   "bucket": "engineering",
+   "disposition": "adapted",
+   "mp_name": "mp-research",
+   "carries": [],
+   "runtime_tokens_found": [
+    {
+     "file": "engineering/research/SKILL.md",
+     "line": 3,
+     "token": "background agent",
+     "excerpt": "description: Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched"
+    },
+    {
+     "file": "engineering/research/SKILL.md",
+     "line": 6,
+     "token": "background agent",
+     "excerpt": "Spin up a **background agent** to do the research, so you keep working while it reads."
+    }
+   ],
+   "needs_slots": [
+    "delegation",
+    "delegation-fallback"
+   ],
+   "user_config_dependencies": [],
+   "audit_note": "The entire skill is 'spin up a background agent'. Needs the delegation slot plus a trivial serial fallback (do the reading inline in this session, still write the cited markdown file into the repo)."
+  },
+  {
+   "skill": "retro",
+   "bucket": "engineering",
+   "disposition": "adapted",
+   "mp_name": "mp-retro",
+   "carries": [],
+   "runtime_tokens_found": [
+    {
+     "file": "engineering/retro/SKILL.md",
+     "line": 4,
+     "token": "disable-model-invocation",
+     "excerpt": "disable-model-invocation: true"
+    },
+    {
+     "file": "engineering/retro/SKILL.md",
+     "line": 11,
+     "token": "Skill tool",
+     "excerpt": "1. Call the Skill tool with `writing-for-agents` for the writing style guide."
+    },
+    {
+     "file": "engineering/retro/SKILL.md",
+     "line": 20,
+     "token": "AGENTS.md",
+     "excerpt": "- **Global AGENTS.md**: are there any steering instructions that should be moved to coding standards (or automated checks) instead? _Use when_ the AGENTS.md file is parti"
+    },
+    {
+     "file": "engineering/retro/SKILL.md",
+     "line": 41,
+     "token": "CLAUDE.md",
+     "excerpt": "- `CLAUDE.md`/`AGENTS.md`: these files are pushed to the context window of any agent working in this repo. They should be used incredibly sparingly, usually only for **na"
+    },
+    {
+     "file": "engineering/retro/SKILL.md",
+     "line": 41,
+     "token": "AGENTS.md",
+     "excerpt": "- `CLAUDE.md`/`AGENTS.md`: these files are pushed to the context window of any agent working in this repo. They should be used incredibly sparingly, usually only for **na"
+    }
+   ],
+   "needs_slots": [
+    "skill_loading",
+    "history",
+    "configuration"
+   ],
+   "user_config_dependencies": [
+    "session log / transcript location (host-specific); repo steering files; name of the repo's own agent-instruction file"
+   ],
+   "audit_note": "Skill-tool call into writing-for-agents; reads session logs on the host (history slot); its candidate category 'Global AGENTS.md' hardcodes AGENTS.md and needs the same configurable-instruction-file treatment as setup-matt-pocock-skills (configuration slot)."
+  },
+  {
+   "skill": "setup-matt-pocock-skills",
+   "bucket": "engineering",
+   "disposition": "adapted",
+   "mp_name": "mp-setup-matt-pocock-skills",
+   "carries": [
+    {
+     "file": "domain.md",
+     "role": "domain-doc consumer rules seed template",
+     "disposition": "reference-only"
+    },
+    {
+     "file": "issue-tracker-github.md",
+     "role": "GitHub tracker seed template",
+     "disposition": "reference-only"
+    },
+    {
+     "file": "issue-tracker-gitlab.md",
+     "role": "GitLab tracker seed template",
+     "disposition": "reference-only"
+    },
+    {
+     "file": "issue-tracker-local.md",
+     "role": "local-markdown tracker seed template",
+     "disposition": "reference-only"
+    },
+    {
+     "file": "triage-labels.md",
+     "role": "triage label mapping seed template",
+     "disposition": "reference-only"
+    }
+   ],
+   "runtime_tokens_found": [
+    {
+     "file": "engineering/setup-matt-pocock-skills/SKILL.md",
+     "line": 4,
+     "token": "disable-model-invocation",
+     "excerpt": "disable-model-invocation: true"
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/SKILL.md",
+     "line": 24,
+     "token": "CLAUDE.md",
+     "excerpt": "- `AGENTS.md` and `CLAUDE.md` at the repo root: does either exist? Is there already an `## Agent skills` section in either?"
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/SKILL.md",
+     "line": 24,
+     "token": "AGENTS.md",
+     "excerpt": "- `AGENTS.md` and `CLAUDE.md` at the repo root: does either exist? Is there already an `## Agent skills` section in either?"
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/SKILL.md",
+     "line": 40,
+     "token": "gh <cmd>",
+     "excerpt": "> Explainer: The \"issue tracker\" is where issues live for this repo. Skills like `to-tickets`, `triage`, and `to-spec` read from and write to it. They need to know whethe"
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/SKILL.md",
+     "line": 67,
+     "token": "CLAUDE.md",
+     "excerpt": "- The `## Agent skills` block to add to whichever of `CLAUDE.md` / `AGENTS.md` is being edited (see step 4 for selection rules)"
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/SKILL.md",
+     "line": 67,
+     "token": "AGENTS.md",
+     "excerpt": "- The `## Agent skills` block to add to whichever of `CLAUDE.md` / `AGENTS.md` is being edited (see step 4 for selection rules)"
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/SKILL.md",
+     "line": 76,
+     "token": "CLAUDE.md",
+     "excerpt": "- If `CLAUDE.md` exists, edit it."
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/SKILL.md",
+     "line": 77,
+     "token": "AGENTS.md",
+     "excerpt": "- Else if `AGENTS.md` exists, edit it."
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/SKILL.md",
+     "line": 80,
+     "token": "CLAUDE.md",
+     "excerpt": "Never create `AGENTS.md` when `CLAUDE.md` already exists (or vice versa); always edit the one that's already there."
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/SKILL.md",
+     "line": 80,
+     "token": "AGENTS.md",
+     "excerpt": "Never create `AGENTS.md` when `CLAUDE.md` already exists (or vice versa); always edit the one that's already there."
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 7,
+     "token": "gh <cmd>",
+     "excerpt": "- **Create an issue**: `gh issue create --title \"...\" --body \"...\"`. Use a heredoc for multi-line bodies."
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 8,
+     "token": "gh <cmd>",
+     "excerpt": "- **Read an issue**: `gh issue view <number> --comments`, filtering comments by `jq` and also fetching labels."
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 9,
+     "token": "gh <cmd>",
+     "excerpt": "- **List issues**: `gh issue list --state open --json number,title,body,labels,comments --jq '[.[] | {number, title, body, labels: [.labels[].name], comments: [.comments["
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 10,
+     "token": "gh <cmd>",
+     "excerpt": "- **Comment on an issue**: `gh issue comment <number> --body \"...\"`"
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 11,
+     "token": "gh <cmd>",
+     "excerpt": "- **Apply / remove labels**: `gh issue edit <number> --add-label \"...\"` / `--remove-label \"...\"`"
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 12,
+     "token": "gh <cmd>",
+     "excerpt": "- **Close**: `gh issue close <number> --comment \"...\"`"
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 20,
+     "token": "gh <cmd>",
+     "excerpt": "When set to `yes`, PRs run through the same labels and states as issues, using the `gh pr` equivalents:"
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 22,
+     "token": "gh <cmd>",
+     "excerpt": "- **Read a PR**: `gh pr view <number> --comments` and `gh pr diff <number>` for the diff."
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 23,
+     "token": "gh <cmd>",
+     "excerpt": "- **List external PRs for triage**: `gh pr list --state open --json number,title,body,labels,author,authorAssociation,comments` then keep only `authorAssociation` of `CON"
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 24,
+     "token": "gh <cmd>",
+     "excerpt": "- **Comment / label / close**: `gh pr comment`, `gh pr edit --add-label`/`--remove-label`, `gh pr close`."
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 26,
+     "token": "gh <cmd>",
+     "excerpt": "GitHub shares one number space across issues and PRs, so a bare `#42` may be either: resolve with `gh pr view 42` and fall back to `gh issue view 42`."
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 34,
+     "token": "gh <cmd>",
+     "excerpt": "Run `gh issue view <number> --comments`."
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 40,
+     "token": "gh <cmd>",
+     "excerpt": "- **Map**: a single issue labelled `wayfinder:map`, holding the Notes / Decisions-so-far / Fog body. `gh issue create --label wayfinder:map`."
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 41,
+     "token": "gh <cmd>",
+     "excerpt": "- **Child ticket**: an issue linked to the map as a GitHub sub-issue (`gh api` on the sub-issues endpoint). Where sub-issues aren't enabled, add the child to a task list "
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 42,
+     "token": "gh <cmd>",
+     "excerpt": "- **Blocking**: GitHub's **native issue dependencies**, the canonical, UI-visible representation. Add an edge with `gh api --method POST repos/<owner>/<repo>/issues/<chil"
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 43,
+     "token": "gh <cmd>",
+     "excerpt": "- **Frontier query**: list the map's open children (`gh issue list --state open`, scoped to the map's sub-issues / task list), drop any with an open blocker (`issue_depen"
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 44,
+     "token": "gh <cmd>",
+     "excerpt": "- **Claim**: `gh issue edit <n> --add-assignee @me`, the session's first write."
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+     "line": 45,
+     "token": "gh <cmd>",
+     "excerpt": "- **Resolve**: `gh issue comment <n> --body \"<answer>\"`, then `gh issue close <n>`, then append a context pointer (gist + link) to the map's Decisions-so-far."
+    },
+    {
+     "file": "engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md",
+     "line": 13,
+     "token": "gh <cmd>",
+     "excerpt": "- **Merge requests**: GitLab calls PRs \"merge requests\". Use `glab mr create`, `glab mr view`, `glab mr note`, etc., the same shape as `gh pr ...` with `mr` in place of `"
+    }
+   ],
+   "needs_slots": [
+    "configuration",
+    "integrations"
+   ],
+   "user_config_dependencies": [
+    "user choice of issue tracker (GitHub/GitLab/local/other); user choice of agent-instruction file; whether the triage skill is installed"
+   ],
+   "audit_note": "Step 4 hardcodes CLAUDE.md/AGENTS.md with edit-if-exists rules. Per handoff decision, the agent-instruction file must become a configurable (user-named) file, not a hardcoded pair. gh/glab commands live inside the seed templates by design: they are the per-tracker configuration the user chose, so they travel reference-only, not as core prose."
+  },
+  {
+   "skill": "tdd",
+   "bucket": "engineering",
+   "disposition": "adapted",
+   "mp_name": "mp-tdd",
+   "carries": [
+    {
+     "file": "mocking.md",
+     "role": "when/what to mock at system boundaries",
+     "disposition": "reference-only"
+    },
+    {
+     "file": "tests.md",
+     "role": "good vs bad test examples",
+     "disposition": "reference-only"
+    }
+   ],
+   "runtime_tokens_found": [
+    {
+     "file": "engineering/tdd/SKILL.md",
+     "line": 26,
+     "token": "Skill tool",
+     "excerpt": "When the shape of that interface is itself in question (how deep the module is, where the seam belongs, what the interface should expose), call the Skill tool with \"codeb"
+    }
+   ],
+   "needs_slots": [
+    "skill_loading"
+   ],
+   "user_config_dependencies": [
+    "GLOSSARY.md / docs/adr/ (read opportunistically)"
+   ],
+   "audit_note": "Single Skill-tool call into codebase-design when the seam shape itself is the question. Everything else is neutral method."
+  },
+  {
+   "skill": "to-spec",
+   "bucket": "engineering",
+   "disposition": "metadata-only",
+   "mp_name": "mp-to-spec",
+   "carries": [],
+   "runtime_tokens_found": [
+    {
+     "file": "engineering/to-spec/SKILL.md",
+     "line": 4,
+     "token": "disable-model-invocation",
+     "excerpt": "disable-model-invocation: true"
+    }
+   ],
+   "needs_slots": [],
+   "user_config_dependencies": [
+    "issue tracker config; triage label vocabulary"
+   ],
+   "audit_note": "Body is a clean spec template; the only runtime content is frontmatter (disable-model-invocation) plus the configured-tracker/triage-label dependency it states in prose."
+  },
+  {
+   "skill": "to-tickets",
+   "bucket": "engineering",
+   "disposition": "metadata-only",
+   "mp_name": "mp-to-tickets",
+   "carries": [],
+   "runtime_tokens_found": [
+    {
+     "file": "engineering/to-tickets/SKILL.md",
+     "line": 4,
+     "token": "disable-model-invocation",
+     "excerpt": "disable-model-invocation: true"
+    }
+   ],
+   "needs_slots": [],
+   "user_config_dependencies": [
+    "issue tracker config (native blocking vs .scratch/ file convention); triage label vocabulary"
+   ],
+   "audit_note": "Body already handles both tracker shapes (local file per ticket / native blocking links). Frontmatter DMI is the only host-coupled part."
+  },
+  {
+   "skill": "triage",
+   "bucket": "engineering",
+   "disposition": "adapted",
+   "mp_name": "mp-triage",
+   "carries": [
+    {
+     "file": "AGENT-BRIEF.md",
+     "role": "agent-brief writing principles and templates",
+     "disposition": "adapted-with-parent"
+    },
+    {
+     "file": "OUT-OF-SCOPE.md",
+     "role": ".out-of-scope/ knowledge-base format and flow",
+     "disposition": "reference-only"
+    }
+   ],
+   "runtime_tokens_found": [
+    {
+     "file": "engineering/triage/AGENT-BRIEF.md",
+     "line": 32,
+     "token": "gh <cmd>",
+     "excerpt": "- **Good:** \"Running `gh issue list --label needs-triage` returns issues that have been through initial classification\""
+    },
+    {
+     "file": "engineering/triage/SKILL.md",
+     "line": 4,
+     "token": "disable-model-invocation",
+     "excerpt": "disable-model-invocation: true"
+    },
+    {
+     "file": "engineering/triage/SKILL.md",
+     "line": 76,
+     "token": "Skill tool",
+     "excerpt": "4. **Grill (if needed).** If the request needs fleshing out, call the Skill tool twice, for \"grilling\" and \"domain-modeling\", and grill it into shape a round of questions"
+    }
+   ],
+   "needs_slots": [
+    "skill_loading"
+   ],
+   "user_config_dependencies": [
+    "issue tracker config; triage label mapping; .out-of-scope/ knowledge base; external-PR surface flag"
+   ],
+   "audit_note": "Skill-tool calls (grilling, domain-modeling) when grilling is needed. AGENT-BRIEF.md quotes one gh-based acceptance-criterion example - tracker-flavoured, rides the parent's adapted disposition. OUT-OF-SCOPE.md is token-free reference."
+  },
+  {
+   "skill": "wayfinder",
+   "bucket": "engineering",
+   "disposition": "adapted",
+   "mp_name": "mp-wayfinder",
+   "carries": [],
+   "runtime_tokens_found": [
+    {
+     "file": "engineering/wayfinder/SKILL.md",
+     "line": 4,
+     "token": "disable-model-invocation",
+     "excerpt": "disable-model-invocation: true"
+    },
+    {
+     "file": "engineering/wayfinder/SKILL.md",
+     "line": 77,
+     "token": "Skill tool",
+     "excerpt": "- **Research** (AFK): Reading documentation, third-party APIs, or local resources like knowledge bases to surface a fact a decision waits on. Resolved by a subagent that "
+    },
+    {
+     "file": "engineering/wayfinder/SKILL.md",
+     "line": 77,
+     "token": "subagent/sub-agent",
+     "excerpt": "- **Research** (AFK): Reading documentation, third-party APIs, or local resources like knowledge bases to surface a fact a decision waits on. Resolved by a subagent that "
+    },
+    {
+     "file": "engineering/wayfinder/SKILL.md",
+     "line": 78,
+     "token": "Skill tool",
+     "excerpt": "- **Prototype** (HITL): Raise the fidelity of the discussion by making a cheap, rough, concrete artifact to react to (an outline, a rough take, a stub, or UI/logic code) "
+    },
+    {
+     "file": "engineering/wayfinder/SKILL.md",
+     "line": 79,
+     "token": "Skill tool",
+     "excerpt": "- **Grilling** (HITL): Conversation. The default case. Always call the Skill tool twice, for \"grilling\" and \"domain-modeling\"."
+    },
+    {
+     "file": "engineering/wayfinder/SKILL.md",
+     "line": 111,
+     "token": "Skill tool",
+     "excerpt": "1. **Name the destination.** Call the Skill tool twice, for \"grilling\" and \"domain-modeling\", to pin down what this map is finding its way to: the spec, decision, or chan"
+    },
+    {
+     "file": "engineering/wayfinder/SKILL.md",
+     "line": 115,
+     "token": "Skill tool",
+     "excerpt": "5. **Fire the research subagents.** For each `research` ticket you just created, spin up a subagent that calls the Skill tool with \"research\" to resolve it in parallel, c"
+    },
+    {
+     "file": "engineering/wayfinder/SKILL.md",
+     "line": 115,
+     "token": "subagent/sub-agent",
+     "excerpt": "5. **Fire the research subagents.** For each `research` ticket you just created, spin up a subagent that calls the Skill tool with \"research\" to resolve it in parallel, c"
+    },
+    {
+     "file": "engineering/wayfinder/SKILL.md",
+     "line": 124,
+     "token": "Skill tool",
+     "excerpt": "3. Resolve it. **Zoom as needed**: fetch the full body of any related or closed ticket on demand; call the Skill tool for whichever skills the `## Notes` block names. If "
+    }
+   ],
+   "needs_slots": [
+    "delegation",
+    "delegation-fallback",
+    "task_tracking",
+    "skill_loading"
+   ],
+   "user_config_dependencies": [
+    "issue tracker's 'Wayfinding operations' section (map, child tickets, blocking, frontier, claim, resolve)"
+   ],
+   "audit_note": "Research tickets resolve via subagents calling the Skill tool with research; grilling/prototype tickets are Skill-tool calls; map/child/blocking/frontier physical shape is tracker-owned. Needs delegation + serial fallback (resolve research tickets inline) and the task_tracking slot for frontier semantics."
+  },
+  {
+   "skill": "wizard",
+   "bucket": "engineering",
+   "disposition": "preserved",
+   "mp_name": "mp-wizard",
+   "carries": [
+    {
+     "file": "template.sh",
+     "role": "generated-wizard bash library incl. ask_secret/write_env/set_secret/set_var",
+     "disposition": "preserved-byte-identical"
+    }
+   ],
+   "runtime_tokens_found": [
+    {
+     "file": "engineering/wizard/SKILL.md",
+     "line": 10,
+     "token": "gh <cmd>",
+     "excerpt": "The delightful UX is already solved by [template.sh](template.sh): stage-by-stage progress, confirmation gates, cross-platform URL opening (including WSL), hidden secret "
+    },
+    {
+     "file": "engineering/wizard/template.sh",
+     "line": 29,
+     "token": "gh <cmd>",
+     "excerpt": "SKIPPED=()        # things we couldn't do (e.g. gh missing)"
+    },
+    {
+     "file": "engineering/wizard/template.sh",
+     "line": 142,
+     "token": "gh <cmd>",
+     "excerpt": "# to a warning (and records it) if gh is unavailable or unauthenticated."
+    },
+    {
+     "file": "engineering/wizard/template.sh",
+     "line": 145,
+     "token": "gh <cmd>",
+     "excerpt": "if command -v gh >/dev/null 2>&1 && gh auth status >/dev/null 2>&1; then"
+    },
+    {
+     "file": "engineering/wizard/template.sh",
+     "line": 146,
+     "token": "gh <cmd>",
+     "excerpt": "if printf '%s' \"$value\" | gh secret set \"$name\" >/dev/null 2>&1; then"
+    },
+    {
+     "file": "engineering/wizard/template.sh",
+     "line": 152,
+     "token": "gh <cmd>",
+     "excerpt": "SKIPPED+=(\"GitHub secret $name (set it manually: gh secret set $name)\")"
+    },
+    {
+     "file": "engineering/wizard/template.sh",
+     "line": 153,
+     "token": "gh <cmd>",
+     "excerpt": "warn \"skipped GitHub secret $name: gh not ready; set it later\""
+    },
+    {
+     "file": "engineering/wizard/template.sh",
+     "line": 159,
+     "token": "gh <cmd>",
+     "excerpt": "if command -v gh >/dev/null 2>&1 && gh auth status >/dev/null 2>&1; then"
+    },
+    {
+     "file": "engineering/wizard/template.sh",
+     "line": 160,
+     "token": "gh <cmd>",
+     "excerpt": "if gh variable set \"$name\" --body \"$value\" >/dev/null 2>&1; then"
+    },
+    {
+     "file": "engineering/wizard/template.sh",
+     "line": 166,
+     "token": "gh <cmd>",
+     "excerpt": "warn \"skipped GitHub variable $name, gh not ready; set it later\""
+    }
+   ],
+   "needs_slots": [],
+   "user_config_dependencies": [
+    "gh availability only inside the human-run script (with in-script graceful skip)"
+   ],
+   "audit_note": "Genuinely agent-neutral: the agent only authors stages; the human runs the script in their terminal. template.sh touches gh only behind command -v guards with SKIPPED recording. Byte-identity verified."
+  },
+  {
+   "skill": "grill-me",
+   "bucket": "productivity",
+   "disposition": "adapted",
+   "mp_name": "mp-grill-me",
+   "carries": [],
+   "runtime_tokens_found": [
+    {
+     "file": "productivity/grill-me/SKILL.md",
+     "line": 4,
+     "token": "disable-model-invocation",
+     "excerpt": "disable-model-invocation: true"
+    },
+    {
+     "file": "productivity/grill-me/SKILL.md",
+     "line": 7,
+     "token": "Skill tool",
+     "excerpt": "Call the Skill tool with \"grilling\"."
+    }
+   ],
+   "needs_slots": [
+    "skill_loading"
+   ],
+   "user_config_dependencies": [],
+   "audit_note": "One-line router: body is a Skill-tool invocation with 'grilling'."
+  },
+  {
+   "skill": "grilling",
+   "bucket": "productivity",
+   "disposition": "adapted",
+   "mp_name": "mp-grilling",
+   "carries": [],
+   "runtime_tokens_found": [
+    {
+     "file": "productivity/grilling/SKILL.md",
+     "line": 26,
+     "token": "subagent/sub-agent",
+     "excerpt": "Finding _facts_ is your job, never the user's. When a frontier question needs a fact from the environment (filesystem, tools, etc.), dispatch a sub-agent to find it; don'"
+    }
+   ],
+   "needs_slots": [
+    "delegation",
+    "delegation-fallback"
+   ],
+   "user_config_dependencies": [],
+   "audit_note": "'Finding facts is your job': a frontier question may dispatch a sub-agent to look things up while the interview continues. Needs the delegation slot with a serial fallback (perform the lookup with own file/terminal tools; only questions downstream of the fact wait)."
+  },
+  {
+   "skill": "handoff",
+   "bucket": "productivity",
+   "disposition": "adapted",
+   "mp_name": "mp-handoff",
+   "carries": [],
+   "runtime_tokens_found": [
+    {
+     "file": "productivity/handoff/SKILL.md",
+     "line": 4,
+     "token": "argument-hint",
+     "excerpt": "argument-hint: \"What will the next session be used for?\""
+    },
+    {
+     "file": "productivity/handoff/SKILL.md",
+     "line": 5,
+     "token": "disable-model-invocation",
+     "excerpt": "disable-model-invocation: true"
+    },
+    {
+     "file": "productivity/handoff/SKILL.md",
+     "line": 10,
+     "token": "Skill tool",
+     "excerpt": "Include a \"suggested skills\" section in the document, naming which skills the next agent should call the Skill tool for."
+    }
+   ],
+   "needs_slots": [
+    "history",
+    "skill_loading"
+   ],
+   "user_config_dependencies": [
+    "OS temp-dir convention; next agent's available skill roster"
+   ],
+   "audit_note": "Writes a handoff doc to the OS temporary directory, deliberately outside the workspace (recorded as an out-of-project side effect; per handoff scope rules this is intended behaviour, upstream-authored, question-free). 'Suggested skills' section reaches the Skill tool by name."
+  },
+  {
+   "skill": "teach",
+   "bucket": "productivity",
+   "disposition": "metadata-only",
+   "mp_name": "mp-teach",
+   "carries": [
+    {
+     "file": "GLOSSARY-FORMAT.md",
+     "role": "teaching-workspace glossary format",
+     "disposition": "reference-only"
+    },
+    {
+     "file": "LEARNING-RECORD-FORMAT.md",
+     "role": "learning-record format and triggers",
+     "disposition": "reference-only"
+    },
+    {
+     "file": "MISSION-FORMAT.md",
+     "role": "mission statement format",
+     "disposition": "reference-only"
+    },
+    {
+     "file": "RESOURCES-FORMAT.md",
+     "role": "trusted resources + communities format",
+     "disposition": "reference-only"
+    }
+   ],
+   "runtime_tokens_found": [
+    {
+     "file": "productivity/teach/SKILL.md",
+     "line": 4,
+     "token": "disable-model-invocation",
+     "excerpt": "disable-model-invocation: true"
+    },
+    {
+     "file": "productivity/teach/SKILL.md",
+     "line": 5,
+     "token": "argument-hint",
+     "excerpt": "argument-hint: \"What would you like to learn about?\""
+    }
+   ],
+   "needs_slots": [],
+   "user_config_dependencies": [
+    "all state lives in the current workspace (MISSION.md, lessons/, reference/, learning-records/, assets/, NOTES.md)"
+   ],
+   "audit_note": "Stateful but entirely in-project. 'Open the lesson by running a CLI command' is generic. Frontmatter carries disable-model-invocation + argument-hint (adapter metadata). Four format files are pure reference."
+  },
+  {
+   "skill": "to-questionnaire",
+   "bucket": "productivity",
+   "disposition": "metadata-only",
+   "mp_name": "mp-to-questionnaire",
+   "carries": [],
+   "runtime_tokens_found": [
+    {
+     "file": "productivity/to-questionnaire/SKILL.md",
+     "line": 4,
+     "token": "disable-model-invocation",
+     "excerpt": "disable-model-invocation: true"
+    }
+   ],
+   "needs_slots": [],
+   "user_config_dependencies": [],
+   "audit_note": "Writes one markdown file in the current directory. Frontmatter DMI only."
+  },
+  {
+   "skill": "wait-what",
+   "bucket": "productivity",
+   "disposition": "metadata-only",
+   "mp_name": "mp-wait-what",
+   "carries": [],
+   "runtime_tokens_found": [
+    {
+     "file": "productivity/wait-what/SKILL.md",
+     "line": 4,
+     "token": "disable-model-invocation",
+     "excerpt": "disable-model-invocation: true"
+    }
+   ],
+   "needs_slots": [],
+   "user_config_dependencies": [
+    "GLOSSARY.md / GLOSSARY-MAP.md (optional, read if present)"
+   ],
+   "audit_note": "One-paragraph corrective; frontmatter DMI only."
+  },
+  {
+   "skill": "writing-for-agents",
+   "bucket": "productivity",
+   "disposition": "adapted",
+   "mp_name": "mp-writing-for-agents",
+   "carries": [
+    {
+     "file": "SKILL-MECHANICS.md",
+     "role": "frontmatter, invocation choice, router-skill mechanics",
+     "disposition": "adapted-with-parent"
+    }
+   ],
+   "runtime_tokens_found": [
+    {
+     "file": "productivity/writing-for-agents/SKILL-MECHANICS.md",
+     "line": 9,
+     "token": "disable-model-invocation",
+     "excerpt": "- A **model-invoked** skill keeps a `description`, so the agent can fire it autonomously, and other skills can reach it. You can still type its name: model-invocation alw"
+    },
+    {
+     "file": "productivity/writing-for-agents/SKILL-MECHANICS.md",
+     "line": 10,
+     "token": "disable-model-invocation",
+     "excerpt": "- A **user-invoked** skill strips the description from the agent's reach: only the human typing its name can invoke it, and no other skill can. Zero context load, but it "
+    },
+    {
+     "file": "productivity/writing-for-agents/SKILL.md",
+     "line": 3,
+     "token": "CLAUDE.md",
+     "excerpt": "description: Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md."
+    },
+    {
+     "file": "productivity/writing-for-agents/SKILL.md",
+     "line": 3,
+     "token": "AGENTS.md",
+     "excerpt": "description: Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md."
+    },
+    {
+     "file": "productivity/writing-for-agents/SKILL.md",
+     "line": 6,
+     "token": "CLAUDE.md",
+     "excerpt": "Reference for writing any document an agent consumes: a skill, an `AGENTS.md` / `CLAUDE.md`, a doc reached by a pointer. The packaging differs; the writing does not: the "
+    },
+    {
+     "file": "productivity/writing-for-agents/SKILL.md",
+     "line": 6,
+     "token": "AGENTS.md",
+     "excerpt": "Reference for writing any document an agent consumes: a skill, an `AGENTS.md` / `CLAUDE.md`, a doc reached by a pointer. The packaging differs; the writing does not: the "
+    },
+    {
+     "file": "productivity/writing-for-agents/SKILL.md",
+     "line": 12,
+     "token": "AGENTS.md",
+     "excerpt": "A **context pointer** is a reference held in the agent's context that names some out-of-context material and encodes the condition for reaching it. A skill's description "
+    },
+    {
+     "file": "productivity/writing-for-agents/SKILL.md",
+     "line": 24,
+     "token": "AGENTS.md",
+     "excerpt": "- **Context load** is the cost of always-loaded material on the agent's window: an `AGENTS.md` line, a skill description, anything sitting in context every turn, spending"
+    },
+    {
+     "file": "productivity/writing-for-agents/SKILL.md",
+     "line": 49,
+     "token": "subagent/sub-agent",
+     "excerpt": "- **Clarity**: can the agent tell done from not-done? A vague bound (\"understanding reached\") invites **premature completion**: ending the step before it is genuinely don"
+    }
+   ],
+   "needs_slots": [
+    "skill_loading",
+    "configuration"
+   ],
+   "user_config_dependencies": [
+    "the repo's agent-instruction file name (generic examples name AGENTS.md/CLAUDE.md)"
+   ],
+   "audit_note": "No delegation. Its examples and SKILL-MECHANICS.md lean on upstream frontmatter semantics (disable-model-invocation as the invocation switch, description-stripping). Adaptation: generalize the agent-instruction-file naming and record invocation flags as documented metadata each adapter resolves; meaning preserved."
+  }
+ ],
+ "naming_review": {
+  "setup-matt-pocock-skills": {
+   "default": "mp-setup-matt-pocock-skills",
+   "considered_shorter": "mp-setup-skills",
+   "finding": "no shorter name adopted",
+   "reason": "routing semantics lock the long name in: 6 skill bodies (ask-matt, code-review, implement-spec, to-spec, to-tickets, triage, wayfinder) tell the user to run /setup-matt-pocock-skills, and the name itself carries attribution (Matt Pocock) in the one skill that is ABOUT adopting his skills. A shorter name would mean rewriting every router reference AND losing the attribution signal. Flagged here for the parent's confirm; nothing was chosen silently."
+  }
+ },
+ "corrections_2026-10-03_porting_session": {
+  "rule": "Body-referenced carriers MUST install with their skill; auditer's 'reference-only' verdict corrected.",
+  "evidence": "10 of 11 carrier-bearing SKILL.md bodies name their carrier files; executing that prose without the files ships broken skills.",
+  "carrier_disposition": {
+   "tdd/mocking.md": "preserved-byte-identical-no-runtime-tokens",
+   "tdd/tests.md": "preserved-byte-identical-no-runtime-tokens",
+   "prototype/LOGIC.md": "preserved-byte-identical-no-runtime-tokens",
+   "prototype/UI.md": "preserved-byte-identical-no-runtime-tokens",
+   "domain-modeling/ADR-FORMAT.md": "preserved-byte-identical-no-runtime-tokens",
+   "domain-modeling/GLOSSARY-FORMAT.md": "preserved-byte-identical-no-runtime-tokens",
+   "improve-codebase-architecture/HTML-REPORT.md": "preserved-byte-identical-no-runtime-tokens",
+   "triage/OUT-OF-SCOPE.md": "preserved-byte-identical-no-runtime-tokens",
+   "setup-matt-pocock-skills/domain.md": "preserved-byte-identical-no-runtime-tokens",
+   "setup-matt-pocock-skills/issue-tracker-github.md": "preserved-byte-identical-no-runtime-tokens",
+   "setup-matt-pocock-skills/issue-tracker-gitlab.md": "preserved-byte-identical-no-runtime-tokens",
+   "setup-matt-pocock-skills/issue-tracker-local.md": "preserved-byte-identical-no-runtime-tokens",
+   "setup-matt-pocock-skills/triage-labels.md": "preserved-byte-identical-no-runtime-tokens",
+   "teach/GLOSSARY-FORMAT.md": "preserved-byte-identical-no-runtime-tokens",
+   "teach/LEARNING-RECORD-FORMAT.md": "preserved-byte-identical-no-runtime-tokens",
+   "teach/MISSION-FORMAT.md": "preserved-byte-identical-no-runtime-tokens",
+   "teach/RESOURCES-FORMAT.md": "preserved-byte-identical-no-runtime-tokens",
+   "pr/CREDITS.md": "preserved-byte-identical (Dex Horthy credit; body-unreferenced but rides to preserve attribution)",
+   "writing-for-agents/SKILL-MECHANICS.md": "adapted (teaches upstream frontmatter incl. disable-model-invocation; re-authored runtime-neutral)",
+   "codebase-design/DEEPENING.md": "preserved-byte-identical-no-runtime-tokens",
+   "codebase-design/DESIGN-IT-TWICE.md": "preserved-byte-identical ('sub-agent' is method vocabulary; parent carries the slot)",
+   "ask-matt/PHASE-BOUNDARIES.md": "preserved-byte-identical ('Subagent' is method vocabulary; parent carries the slot)",
+   "triage/AGENT-BRIEF.md": "preserved-byte-identical-no-runtime-tokens (illustrative quoted gh example flagged)"
+  },
+  "net": "22/25 content carriers preserved byte-identical; 1 adapted (SKILL-MECHANICS.md); 2 scripts already byte-identical."
+ }
 }

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "id": "generic",
+  "identity_tools": [],
+  "requires_acknowledgement": true,
+  "capabilities": {
+    "independent_delegation": false,
+    "per_worker_model_selection": false,
+    "native_skill_loading": "host-dependent",
+    "durable_work": false
+  },
+  "limits": [
+    "Explicit limited baseline, not a verified adapter for every agent product.",
+    "No independent delegates/cross-judge, per-worker model choice, private session-history API or scheduling claimed.",
+    "Use the agent's actual native file/shell operations; the user must select its skill directory.",
+    "If task acceptance requires unavailable independent execution or integrations, report blocked rather than calling a fallback equivalent."
+  ],
+  "snippets": {
+    "files": "Use this agent's actual native file-reading, searching and editing facilities; execute real helper/Git/test commands through its shell capability. Read before replacing existing files and verify written results. If a required operation is unavailable, stop with the evidence gap instead of inventing a tool API.",
+    "delegation": "This generic baseline provides no independent subagents or cross-judge. Perform permitted candidate designs, coverage slices and reviewer lenses sequentially in this session, then synthesize inline. Keep outputs separate and compare all required slices. Label them same-agent perspectives, not independent reviews or different models. If independence is a user requirement, report blocked and request a verified adapter rather than silently substituting. Do not guess spawning APIs or claim durable workers.",
+    "task_tracking": "Use the host's native checklist if available; otherwise maintain a compact task-local phase checklist. Record verified completion, omitted work and blockers without inventing a task-tool schema.",
+    "history": "Use only the active conversation and project-local Git/docs/issues that are actually accessible. No private session-history tool is assumed. Record missing historical sources explicitly; do not scan unrelated users/projects or fabricate past rationale.",
+    "skill_loading": "Read the named skill and supporting files through this host's real file/skill facilities. References are relative to that skill directory. If the host does not expose the named skill, locate the installed file directly or report the missing dependency; no particular skill-loader API is assumed.",
+    "skill_maintenance": "For explicitly approved edits, use native file tools on the confirmed skill/project destination, preserve local changes and verify content. Do not modify global prompts, another installation or credentials. For mp repository maintenance edit core source and regenerate/review the selected output instead of hand-editing generated instructions.",
+    "configuration": "This baseline does not configure the host runtime. Keep existing model/provider/reasoning settings unchanged. State task-local preferences only; inspect actual documented facilities and obtain separate approval before any runtime settings write. No per-role routing or permanent prompt rule is implied.",
+    "integrations": "Use only capabilities and authenticated integrations actually exposed by the host and within user scope. Discover their real schemas/documentation before execution. Missing connectors are evidence gaps. Loading a skill never installs routes, recurring jobs, dependencies or credentials; read back every authorized external write.",
+    "persistent_work": "No durable background execution is supplied by this baseline. Finish bounded permitted work in the session and leave resumable artifacts/handoff for unfinished tasks. Do not invent schedulers or promise continued execution after the session ends.",
+    "web": "Use only the host's verified browser/desktop/vision facilities. Never infer unseen pixels or request secrets in chat. Follow the host's approved secure credential flow; if none is available, have the user complete authentication locally. No particular browser, webhook or MCP tool is assumed.",
+    "setup": "Use the trusted source checkout to select this explicitly limited baseline, acknowledge its capability limits and confirm the destination skill directory. Generate and verify the output before installation; refuse collisions and do not alter runtime configuration."
+  }
+}
