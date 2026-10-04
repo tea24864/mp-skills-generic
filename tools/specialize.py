@@ -135,8 +135,11 @@ def build(core, adapter_path, output, *, runtime_version=None):
             if not keys <= SLOTS:
                 raise ValueError('Unknown insertion point in ' + str(rel))
             text = SLOT.sub(lambda match: adapter['snippets'][match.group(1)], text)
-            if '{{' in text or '}}' in text:
-                raise ValueError('Unresolved template syntax in ' + str(rel))
+            if SLOT.search(text) or re.search(r'\{\{\s*runtime', text):
+                # Upstream content may legitimately contain non-slot mustache templates
+                # (e.g. report templates rendered by the agent at use time), so only
+                # unresolved runtime slots are "unresolved template syntax" here.
+                raise ValueError('Unresolved runtime slot in ' + str(rel))
             if p.name == 'SKILL.md':
                 fields = validate_frontmatter(text, rel.parts[0])
                 extension = adapter.get('metadata_by_skill', {}).get(rel.parts[0])
