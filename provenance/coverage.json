@@ -1,0 +1,1503 @@
+{
+  "schema_version": 1,
+  "pin": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+  "counts": {
+    "promoted": 79,
+    "stash": 87,
+    "remainder": 6,
+    "total": 172
+  },
+  "promoted_detail": {
+    "byte_identical": 24,
+    "adapted": 28,
+    "carrier_declined": 27
+  },
+  "stash_detail": {
+    "infra": 65,
+    "in_progress": 13,
+    "misc": 9
+  },
+  "remainder_detail": {
+    "LICENSE": {
+      "path": "LICENSE",
+      "reason": "Repo-node file; hash-identical MIT terms are already committed at the repo root (LICENSE) and cited in inventory.json original_license, so staging the upstream copy is redundant."
+    },
+    ".gitignore": {
+      "path": ".gitignore",
+      "reason": "Repo-node file; upstream git configuration, not skills content. No effect on the port's subject matter."
+    },
+    ".github/workflows/release.yml": {
+      "path": ".github/workflows/release.yml",
+      "reason": "Upstream release automation bound to upstream's npm/plugin publishing pipeline; the port distributes via tools/specialize.py instead."
+    },
+    "scripts/list-skills.sh": {
+      "path": "scripts/list-skills.sh",
+      "reason": "Upstream repo helper for its own plugin marketplace listing; superseded by inventory.json in the port."
+    },
+    "scripts/sync-plugin-version.mjs": {
+      "path": "scripts/sync-plugin-version.mjs",
+      "reason": "Upstream repo helper syncing package/plugin versions for its release flow; no analogue needed in the port."
+    },
+    ".agents/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md": {
+      "path": ".agents/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md",
+      "reason": "Upstream infra ADR: every sibling ADR (0002-ship-as-a-claude-code-plugin, agent docs) is already preserved in reference-only/infra; 0001 alone was omitted from the stash copy list as an upstream-internal infra decision with no bearing on the promoted skill bodies."
+    }
+  },
+  "files": [
+    {
+      "upstream_path": ".agents/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md",
+      "disposition": "remainder",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "8f60cf9bf19f1ee8cc09a15c2e06e1d7a9cb51f79d9a273dd9b20b8a2a494f80",
+      "relationship": "declined-not-staged"
+    },
+    {
+      "upstream_path": ".agents/adr/0002-ship-as-a-claude-code-plugin.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.agents/adr/0002-ship-as-a-claude-code-plugin.md",
+      "target_sha256": "c8f8f946db9fee714fc55270caf6107e749e30316d43fb80cb3ce2f048dd949d",
+      "upstream_sha256": "c8f8f946db9fee714fc55270caf6107e749e30316d43fb80cb3ce2f048dd949d",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".agents/install-block.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.agents/install-block.md",
+      "target_sha256": "23f776c69d4b8688e18fd2a29d51ed4f2cb40132f0c3acb3a1ca6d45c1d18f65",
+      "upstream_sha256": "23f776c69d4b8688e18fd2a29d51ed4f2cb40132f0c3acb3a1ca6d45c1d18f65",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".agents/invocation.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.agents/invocation.md",
+      "target_sha256": "a8ee3ff9cab8fe247c5de4312320117c001df548960970a2769856349ec09402",
+      "upstream_sha256": "a8ee3ff9cab8fe247c5de4312320117c001df548960970a2769856349ec09402",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".agents/writing-docs.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.agents/writing-docs.md",
+      "target_sha256": "5ab85d0351589f5d9bc3b05b3735d7cbe342b75cf2fb5dc6b489e6099566bfd0",
+      "upstream_sha256": "5ab85d0351589f5d9bc3b05b3735d7cbe342b75cf2fb5dc6b489e6099566bfd0",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".changeset/README.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.changeset/README.md",
+      "target_sha256": "495bd4805f8362853bce99689c1cd75db8c475dfa38930619d2e197d7554db27",
+      "upstream_sha256": "495bd4805f8362853bce99689c1cd75db8c475dfa38930619d2e197d7554db27",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".changeset/config.json",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.changeset/config.json",
+      "target_sha256": "61717b21675ba9d99f0fc363253ead2716895a4c043c779727d8c685d48684e8",
+      "upstream_sha256": "61717b21675ba9d99f0fc363253ead2716895a4c043c779727d8c685d48684e8",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".changeset/domain-modeling-trigger-context-adr.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.changeset/domain-modeling-trigger-context-adr.md",
+      "target_sha256": "0b28197ca49344b6a1c70a00b58a0180bdcf9c18817b775a3c0a513355cc466a",
+      "upstream_sha256": "0b28197ca49344b6a1c70a00b58a0180bdcf9c18817b775a3c0a513355cc466a",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".changeset/fix-yaml-frontmatter-colons.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.changeset/fix-yaml-frontmatter-colons.md",
+      "target_sha256": "fb4975a991e85ec802044c96350038db3343be5a604b38a9b5f323bd56223652",
+      "upstream_sha256": "fb4975a991e85ec802044c96350038db3343be5a604b38a9b5f323bd56223652",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".changeset/graduate-implement-spec.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.changeset/graduate-implement-spec.md",
+      "target_sha256": "2d34e9a4292eda22313d349d9dbb624eea823ef4a58f4117718d097c3abaf3de",
+      "upstream_sha256": "2d34e9a4292eda22313d349d9dbb624eea823ef4a58f4117718d097c3abaf3de",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".changeset/graduate-pr.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.changeset/graduate-pr.md",
+      "target_sha256": "aab26457dbaed70dba344edbcdc81d17d5c59ca2970ed097e83ed9a51457b047",
+      "upstream_sha256": "aab26457dbaed70dba344edbcdc81d17d5c59ca2970ed097e83ed9a51457b047",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".changeset/graduate-retro.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.changeset/graduate-retro.md",
+      "target_sha256": "99c00d33c627f1b730b031aa0d5f4a1f859253ae3953097528da343923fc96b0",
+      "upstream_sha256": "99c00d33c627f1b730b031aa0d5f4a1f859253ae3953097528da343923fc96b0",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".changeset/grilling-add-hr-between-questions.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.changeset/grilling-add-hr-between-questions.md",
+      "target_sha256": "bcc1cc80f58662c9d2b40680bced44da7fa273f689a2b7eaf863a0da65790433",
+      "upstream_sha256": "bcc1cc80f58662c9d2b40680bced44da7fa273f689a2b7eaf863a0da65790433",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".changeset/grilling-remove-em-dashes.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.changeset/grilling-remove-em-dashes.md",
+      "target_sha256": "149094700d65fd5a4660e710603a70d65e24a3e12b755ffb54b51eaf0534303f",
+      "upstream_sha256": "149094700d65fd5a4660e710603a70d65e24a3e12b755ffb54b51eaf0534303f",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".changeset/remove-em-dashes-repo-wide.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.changeset/remove-em-dashes-repo-wide.md",
+      "target_sha256": "bf463a1fc067e2a0752a952c247169e1ba1e0bc81fc542d434eb42a99de317bd",
+      "upstream_sha256": "bf463a1fc067e2a0752a952c247169e1ba1e0bc81fc542d434eb42a99de317bd",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".changeset/remove-resolving-merge-conflicts.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.changeset/remove-resolving-merge-conflicts.md",
+      "target_sha256": "52b09ee8f953ffc64a39221623554a3e1516e367b20e6ded4627dcb96d3fbb53",
+      "upstream_sha256": "52b09ee8f953ffc64a39221623554a3e1516e367b20e6ded4627dcb96d3fbb53",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".changeset/rename-context-to-glossary.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.changeset/rename-context-to-glossary.md",
+      "target_sha256": "1fd11de7c9cae82bda42d26e1d45e19029a4a13e3c4369442cd7e33a169ba529",
+      "upstream_sha256": "1fd11de7c9cae82bda42d26e1d45e19029a4a13e3c4369442cd7e33a169ba529",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".changeset/skill-tool-invocation-terminology.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.changeset/skill-tool-invocation-terminology.md",
+      "target_sha256": "3fb3ccf597c7975987c671483f337a9e4d2804bf595e4bec0d854fbaffc6c8c1",
+      "upstream_sha256": "3fb3ccf597c7975987c671483f337a9e4d2804bf595e4bec0d854fbaffc6c8c1",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".changeset/user-invoked-skill-invocation.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.changeset/user-invoked-skill-invocation.md",
+      "target_sha256": "4ddc0960266b40cedd4087c91c0e1e30fb294f2d0d1fcd96e391b27d3a74d365",
+      "upstream_sha256": "4ddc0960266b40cedd4087c91c0e1e30fb294f2d0d1fcd96e391b27d3a74d365",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".changeset/wait-what-context-map.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.changeset/wait-what-context-map.md",
+      "target_sha256": "9fe645eb8ca9423ac0b16341e336bdf971f2253119848c3d10e2ffba83d7c312",
+      "upstream_sha256": "9fe645eb8ca9423ac0b16341e336bdf971f2253119848c3d10e2ffba83d7c312",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".claude-plugin/marketplace.json",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.claude-plugin/marketplace.json",
+      "target_sha256": "83e889fed719fc92dc17a4accc69beed7d6c28bc87ec064b515a90a030f72e13",
+      "upstream_sha256": "83e889fed719fc92dc17a4accc69beed7d6c28bc87ec064b515a90a030f72e13",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".claude-plugin/plugin.json",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.claude-plugin/plugin.json",
+      "target_sha256": "78fefd6e7346602d7c2df05e1bf63358b814633c1206ba53677a72201fadd4e9",
+      "upstream_sha256": "78fefd6e7346602d7c2df05e1bf63358b814633c1206ba53677a72201fadd4e9",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".github/workflows/release.yml",
+      "disposition": "remainder",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "73ce81a83de90d93a63272dae7e1a3ff8d57dc2f8e99424694289dc7174eec46",
+      "relationship": "declined-not-staged"
+    },
+    {
+      "upstream_path": ".gitignore",
+      "disposition": "remainder",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "a7e7370254fc919ab78ddf61e0e3763b80ea7ade18863c6650c329da44b8ec7b",
+      "relationship": "declined-not-staged"
+    },
+    {
+      "upstream_path": ".out-of-scope/mainstream-issue-trackers-only.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.out-of-scope/mainstream-issue-trackers-only.md",
+      "target_sha256": "b640f37fb4dd35b88eeddd1438bd637dc3f813facfc668074c9a71f82d38847f",
+      "upstream_sha256": "b640f37fb4dd35b88eeddd1438bd637dc3f813facfc668074c9a71f82d38847f",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".out-of-scope/question-limits.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.out-of-scope/question-limits.md",
+      "target_sha256": "a4c7ab33523e8f88b75be6549f657cf086b86d77be48b87d48276311e368cc9d",
+      "upstream_sha256": "a4c7ab33523e8f88b75be6549f657cf086b86d77be48b87d48276311e368cc9d",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": ".out-of-scope/setup-skill-verify-mode.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/.out-of-scope/setup-skill-verify-mode.md",
+      "target_sha256": "aba793ba7b3457fd75e7c2560ec0e98e75a051ecfc5f91f73f16fc97475919bd",
+      "upstream_sha256": "aba793ba7b3457fd75e7c2560ec0e98e75a051ecfc5f91f73f16fc97475919bd",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "AGENTS.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/AGENTS.md",
+      "target_sha256": "b5158c840874a5c6b194222d321e1a514c10bdde9d799d0c504130dff5ccfb03",
+      "upstream_sha256": "b5158c840874a5c6b194222d321e1a514c10bdde9d799d0c504130dff5ccfb03",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "CHANGELOG.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/CHANGELOG.md",
+      "target_sha256": "ef5b5c5dfab4103bebcff8820eadbc9634b45fb06c2098c5ce39fb83039b4bcd",
+      "upstream_sha256": "ef5b5c5dfab4103bebcff8820eadbc9634b45fb06c2098c5ce39fb83039b4bcd",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "CLAUDE.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/CLAUDE.md",
+      "target_sha256": "b5158c840874a5c6b194222d321e1a514c10bdde9d799d0c504130dff5ccfb03",
+      "upstream_sha256": "b5158c840874a5c6b194222d321e1a514c10bdde9d799d0c504130dff5ccfb03",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "GLOSSARY.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/GLOSSARY.md",
+      "target_sha256": "4b5291aae26ee0cca5ee31c20b4652d3988a063b2348ed48a751ce9c660a5614",
+      "upstream_sha256": "4b5291aae26ee0cca5ee31c20b4652d3988a063b2348ed48a751ce9c660a5614",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "LICENSE",
+      "disposition": "remainder",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+      "relationship": "declined-not-staged"
+    },
+    {
+      "upstream_path": "README.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/README.md",
+      "target_sha256": "a0ec5e84e3412c62340b17ce641aa6be96988f9e89e967bbce7c1c0597dae333",
+      "upstream_sha256": "a0ec5e84e3412c62340b17ce641aa6be96988f9e89e967bbce7c1c0597dae333",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/ask-matt.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/ask-matt.md",
+      "target_sha256": "d135cf55e1888d50c6a26c634f895869481cfa05aaed2259de154d4568321acb",
+      "upstream_sha256": "d135cf55e1888d50c6a26c634f895869481cfa05aaed2259de154d4568321acb",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/code-review.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/code-review.md",
+      "target_sha256": "372d21ecc02f023b931f3e345d12273b1335071bfa46f7b96f49e8fecb86f6aa",
+      "upstream_sha256": "372d21ecc02f023b931f3e345d12273b1335071bfa46f7b96f49e8fecb86f6aa",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/codebase-design.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/codebase-design.md",
+      "target_sha256": "80a8c23d4729447bd8934127b03f1a38d41ff62283deaade95ca6d118307397c",
+      "upstream_sha256": "80a8c23d4729447bd8934127b03f1a38d41ff62283deaade95ca6d118307397c",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/diagnosing-bugs.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/diagnosing-bugs.md",
+      "target_sha256": "beaa81743d3343e8192e7a6feba8e0c95e4a044ce71ef3c6503f8323902f7c90",
+      "upstream_sha256": "beaa81743d3343e8192e7a6feba8e0c95e4a044ce71ef3c6503f8323902f7c90",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/domain-modeling.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/domain-modeling.md",
+      "target_sha256": "cdad83f2efbb64b0a5d097dcff44b2145e979974edf5a89f71a518cb295958e8",
+      "upstream_sha256": "cdad83f2efbb64b0a5d097dcff44b2145e979974edf5a89f71a518cb295958e8",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/grill-with-docs.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/grill-with-docs.md",
+      "target_sha256": "c484f4d7dcb0023107112ef90c2cad05399f5b4b468bfc7e3972204d041e3138",
+      "upstream_sha256": "c484f4d7dcb0023107112ef90c2cad05399f5b4b468bfc7e3972204d041e3138",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/implement-spec.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/implement-spec.md",
+      "target_sha256": "a001f5968ea3342f6f766d400b441ef5a9ca090001b64b6cadc18bdbb0a11b92",
+      "upstream_sha256": "a001f5968ea3342f6f766d400b441ef5a9ca090001b64b6cadc18bdbb0a11b92",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/implement.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/implement.md",
+      "target_sha256": "6045d55ddf6f02a94fb2cd4f04417bee9991b05521e57b31396be6d14d0b4947",
+      "upstream_sha256": "6045d55ddf6f02a94fb2cd4f04417bee9991b05521e57b31396be6d14d0b4947",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/improve-codebase-architecture.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/improve-codebase-architecture.md",
+      "target_sha256": "04087105faf8c3a8fd37b46e868f1c95850c078f001047314a3f975cc33767be",
+      "upstream_sha256": "04087105faf8c3a8fd37b46e868f1c95850c078f001047314a3f975cc33767be",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/pr.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/pr.md",
+      "target_sha256": "6a2d5aa9d0dcef95477e234aaf84735028fa262cfd708beeb5f88b13da2e2c82",
+      "upstream_sha256": "6a2d5aa9d0dcef95477e234aaf84735028fa262cfd708beeb5f88b13da2e2c82",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/prototype.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/prototype.md",
+      "target_sha256": "dba351ad5a0c4763e295b8c01b72bf57e2a757c1b642c18305939f0ad0090871",
+      "upstream_sha256": "dba351ad5a0c4763e295b8c01b72bf57e2a757c1b642c18305939f0ad0090871",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/research.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/research.md",
+      "target_sha256": "80ed2633b99206c2a4cb036dab43a7d31220483441470d6121f7f2cbf4f7f592",
+      "upstream_sha256": "80ed2633b99206c2a4cb036dab43a7d31220483441470d6121f7f2cbf4f7f592",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/resolving-merge-conflicts.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/resolving-merge-conflicts.md",
+      "target_sha256": "c4ce83050b5d22f0b14ed337459dd29483b72e22f708e69386a127ca4e3dfba5",
+      "upstream_sha256": "c4ce83050b5d22f0b14ed337459dd29483b72e22f708e69386a127ca4e3dfba5",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/retro.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/retro.md",
+      "target_sha256": "215040114b2282a2cc4db9f546c5deae22f633b42e0a51cba4e55379ee9b96f8",
+      "upstream_sha256": "215040114b2282a2cc4db9f546c5deae22f633b42e0a51cba4e55379ee9b96f8",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/setup-matt-pocock-skills.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/setup-matt-pocock-skills.md",
+      "target_sha256": "b334ff58342a0a2f88eebca0357e3e8314dce862543bc003e3f0bf722cdce882",
+      "upstream_sha256": "b334ff58342a0a2f88eebca0357e3e8314dce862543bc003e3f0bf722cdce882",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/tdd.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/tdd.md",
+      "target_sha256": "9e219077cd0f1b9733bc25aaad4e195a9849c03e30a5d4b2b49461a866920e42",
+      "upstream_sha256": "9e219077cd0f1b9733bc25aaad4e195a9849c03e30a5d4b2b49461a866920e42",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/to-spec.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/to-spec.md",
+      "target_sha256": "0adde54d099977f0d298e0b8c1a10dc9d3ea241c6b547a3043121f2b3c54a750",
+      "upstream_sha256": "0adde54d099977f0d298e0b8c1a10dc9d3ea241c6b547a3043121f2b3c54a750",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/to-tickets.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/to-tickets.md",
+      "target_sha256": "c9808a60467db9dfb52441a30f14d74e923034a6219726bcafb164a70c63d143",
+      "upstream_sha256": "c9808a60467db9dfb52441a30f14d74e923034a6219726bcafb164a70c63d143",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/triage.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/triage.md",
+      "target_sha256": "224b1718c8b784edccfd9f5bb67c3a7660bdb2e7df4561dee1e07e0f932d2a9f",
+      "upstream_sha256": "224b1718c8b784edccfd9f5bb67c3a7660bdb2e7df4561dee1e07e0f932d2a9f",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/wayfinder.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/wayfinder.md",
+      "target_sha256": "5e186ef2b90a77ccf7b48ff7c72bbc97fc5c2ba0abe316b91fefa206cb18430e",
+      "upstream_sha256": "5e186ef2b90a77ccf7b48ff7c72bbc97fc5c2ba0abe316b91fefa206cb18430e",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/engineering/wizard.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/engineering/wizard.md",
+      "target_sha256": "d9936487d804e953412f0f932dd5d273c29643b1995e1a5d443624b3f9059210",
+      "upstream_sha256": "d9936487d804e953412f0f932dd5d273c29643b1995e1a5d443624b3f9059210",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/productivity/grill-me.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/productivity/grill-me.md",
+      "target_sha256": "f33268c7cecfd5c83c1e27124f6d92b5bf2966a233c7703f98475d445c10c8b4",
+      "upstream_sha256": "f33268c7cecfd5c83c1e27124f6d92b5bf2966a233c7703f98475d445c10c8b4",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/productivity/grilling.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/productivity/grilling.md",
+      "target_sha256": "c84dc91244f16b806cd5646698dbe5d2496039a9fb7e7f14d1d4e192c89061da",
+      "upstream_sha256": "c84dc91244f16b806cd5646698dbe5d2496039a9fb7e7f14d1d4e192c89061da",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/productivity/handoff.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/productivity/handoff.md",
+      "target_sha256": "a8020faa68d0077e8a5701e817817c8858a5f1a70d5b3f16dc8034e7d8df0b44",
+      "upstream_sha256": "a8020faa68d0077e8a5701e817817c8858a5f1a70d5b3f16dc8034e7d8df0b44",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/productivity/teach.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/productivity/teach.md",
+      "target_sha256": "2ac7f1d694fdd744a5c5157477d5459e3d25876e0b65388d5441f934916b4970",
+      "upstream_sha256": "2ac7f1d694fdd744a5c5157477d5459e3d25876e0b65388d5441f934916b4970",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/productivity/to-questionnaire.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/productivity/to-questionnaire.md",
+      "target_sha256": "875abaef1ed5842ca5f008956288192341b48e4e71904ef4151a56560c3c58eb",
+      "upstream_sha256": "875abaef1ed5842ca5f008956288192341b48e4e71904ef4151a56560c3c58eb",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/productivity/wait-what.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/productivity/wait-what.md",
+      "target_sha256": "ecc77def1e2595b815fdce48d19c94ea41e2a1174b7795b2fe05fa0376535693",
+      "upstream_sha256": "ecc77def1e2595b815fdce48d19c94ea41e2a1174b7795b2fe05fa0376535693",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "docs/productivity/writing-for-agents.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/docs/productivity/writing-for-agents.md",
+      "target_sha256": "ec693417b5584169bb6c980d856dc06600c65b2d2f9038fd0bc5f03a494dc770",
+      "upstream_sha256": "ec693417b5584169bb6c980d856dc06600c65b2d2f9038fd0bc5f03a494dc770",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "package-lock.json",
+      "disposition": "stash",
+      "target": "provenance/reference-only/package-lock.json",
+      "target_sha256": "b89967d44b654ceb7b9fcc7e0d6c3f74fb110bb96eb66c65bac14099c729338d",
+      "upstream_sha256": "b89967d44b654ceb7b9fcc7e0d6c3f74fb110bb96eb66c65bac14099c729338d",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "package.json",
+      "disposition": "stash",
+      "target": "provenance/reference-only/package.json",
+      "target_sha256": "167010d1c535a085be165835a4cc89e1de2760c2bf3b6e43c6ae045e41d0587b",
+      "upstream_sha256": "167010d1c535a085be165835a4cc89e1de2760c2bf3b6e43c6ae045e41d0587b",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "scripts/link-skills.sh",
+      "disposition": "stash",
+      "target": "provenance/reference-only/scripts/link-skills.sh",
+      "target_sha256": "ae1ce5404a1eb90c1e80f6b6ecf101ed05e4efbc5ef62d6d83f896a9377b3878",
+      "upstream_sha256": "ae1ce5404a1eb90c1e80f6b6ecf101ed05e4efbc5ef62d6d83f896a9377b3878",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "scripts/list-skills.sh",
+      "disposition": "remainder",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "9968c1b679e2a08a8e3204f6e72afeea3b51df50299faec12a4c8eed6bcf2f6a",
+      "relationship": "declined-not-staged"
+    },
+    {
+      "upstream_path": "scripts/sync-plugin-version.mjs",
+      "disposition": "remainder",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "1ef892ec79e2f41ffe4c4d051f0e29d70401219499b6a11e717e5db337d78984",
+      "relationship": "declined-not-staged"
+    },
+    {
+      "upstream_path": "skills/deprecated/README.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/deprecated/README.md",
+      "target_sha256": "8b2009e31b7353f318a4321901b1141377e4d395f092934bacde7e9c5b070e26",
+      "upstream_sha256": "8b2009e31b7353f318a4321901b1141377e4d395f092934bacde7e9c5b070e26",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/README.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/engineering/README.md",
+      "target_sha256": "32d9469dda4e6103d952909cb83e657b7bec01bc582b6be4cec3b493f66920fd",
+      "upstream_sha256": "32d9469dda4e6103d952909cb83e657b7bec01bc582b6be4cec3b493f66920fd",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/ask-matt/PHASE-BOUNDARIES.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-ask-matt",
+      "target": "mp-ask-matt/PHASE-BOUNDARIES.md",
+      "target_sha256": "a8aa20158609ef39e2b308b6ba0660c91066838d07a867202e63a7744a88a3ed",
+      "upstream_sha256": "a8aa20158609ef39e2b308b6ba0660c91066838d07a867202e63a7744a88a3ed",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/ask-matt/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-ask-matt",
+      "target": "mp-ask-matt/SKILL.md",
+      "target_sha256": "72ca063fa73b3220247752b9f285074a186b31b77857e8cc1cf0cb2b2533507e",
+      "upstream_sha256": "3f0f34614070aba3d9a7e2bd210718d78b9b942dd0f9af0c5869234fe34e16af",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/ask-matt/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-ask-matt",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "bdffbc5a0a99ed1b6ef3253d251d755fd18162b9845972e380007f844b09b05c",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/code-review/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-code-review",
+      "target": "mp-code-review/SKILL.md",
+      "target_sha256": "29a6376b981978997b18748708e67ac8567abd22c4cbcd8ef60a43dcf0707429",
+      "upstream_sha256": "47f4e52c21694def9c7c11cbfbf891ca35eac7a93e395797515be3c8a409ae50",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/code-review/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-code-review",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "8229ca854e11dc8e6aef2131ee03f31fb1561cf905fab9ccc325180cf3331352",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/codebase-design/DEEPENING.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-codebase-design",
+      "target": "mp-codebase-design/DEEPENING.md",
+      "target_sha256": "f3dd099ce99289bd213914d8ee3e2429b78309c3957ca4583f7659551b1d53c1",
+      "upstream_sha256": "f3dd099ce99289bd213914d8ee3e2429b78309c3957ca4583f7659551b1d53c1",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/codebase-design/DESIGN-IT-TWICE.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-codebase-design",
+      "target": "mp-codebase-design/DESIGN-IT-TWICE.md",
+      "target_sha256": "52b52e75655a27aea59c6966b410bac82448968ad46ef1ebb9f07c274e3ae010",
+      "upstream_sha256": "52b52e75655a27aea59c6966b410bac82448968ad46ef1ebb9f07c274e3ae010",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/codebase-design/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-codebase-design",
+      "target": "mp-codebase-design/SKILL.md",
+      "target_sha256": "71aa99fe094674f2349586f9b9150819ed49b6c726553b4b22b0e592248d5524",
+      "upstream_sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/codebase-design/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-codebase-design",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "edebc9e4fcfe102114012575eaa9600b9b5fd08c311664f389c36e7bc717740f",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/diagnosing-bugs/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-diagnosing-bugs",
+      "target": "mp-diagnosing-bugs/SKILL.md",
+      "target_sha256": "6083acc335e16debd24e6d453e3708866ab5b685e2633408743a735569f25cb2",
+      "upstream_sha256": "9168404abda0967a5d32977e3498cd95fda6807018852f3de736a78357c82b40",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/diagnosing-bugs/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-diagnosing-bugs",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "3e430dbe4334a87597488c060cb3dc3786bb00c9182877d6f5ec41f62490e90b",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/diagnosing-bugs/scripts/hitl-loop.template.sh",
+      "disposition": "promoted",
+      "mp_skill": "mp-diagnosing-bugs",
+      "target": "mp-diagnosing-bugs/scripts/hitl-loop.template.sh",
+      "target_sha256": "35103539fc36873eea36074769ad454f9379d6fc8b2dc0e26ce987fd3bfe5503",
+      "upstream_sha256": "35103539fc36873eea36074769ad454f9379d6fc8b2dc0e26ce987fd3bfe5503",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/domain-modeling/ADR-FORMAT.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-domain-modeling",
+      "target": "mp-domain-modeling/ADR-FORMAT.md",
+      "target_sha256": "944c92aa790e8fbdc9199640b170979abb8a34ba8d0fe18c2a01a63bce140ca0",
+      "upstream_sha256": "944c92aa790e8fbdc9199640b170979abb8a34ba8d0fe18c2a01a63bce140ca0",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/domain-modeling/GLOSSARY-FORMAT.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-domain-modeling",
+      "target": "mp-domain-modeling/GLOSSARY-FORMAT.md",
+      "target_sha256": "21dcc40cdec8e151a829b98ab1517c1867bc444e3665134a98c6983411996801",
+      "upstream_sha256": "21dcc40cdec8e151a829b98ab1517c1867bc444e3665134a98c6983411996801",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/domain-modeling/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-domain-modeling",
+      "target": "mp-domain-modeling/SKILL.md",
+      "target_sha256": "e2bb287260dc5d69ae070f6c092c73fd3f32055c1d3f4b0bdf3f2b3213a4c67c",
+      "upstream_sha256": "7b925d7b1e341a2eeae33ad68a8a8c0ab889a38ddd22a7598e4c240e5a7556a3",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/domain-modeling/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-domain-modeling",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "f6bf2aa996c6e6f53fdd0708e18a0d16a56aed8322cca59fedbe3c0d2c75f06b",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/grill-with-docs/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-grill-with-docs",
+      "target": "mp-grill-with-docs/SKILL.md",
+      "target_sha256": "fb21936e63d42618aa6dfadac035c3725b3c927478b0ce5aa0ee43c0fcd9582c",
+      "upstream_sha256": "7de372c13488f1ee96cc11cd8907b56b6809cc93eef776eeddd37de6b6cbe3fe",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/grill-with-docs/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-grill-with-docs",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "94cd0ab161fb468a836349f5ed482ba58ce8e709a05c57ce533d739dbd35cca9",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/implement-spec/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-implement-spec",
+      "target": "mp-implement-spec/SKILL.md",
+      "target_sha256": "ad06a635a85e6a61cb057ccb6dc159b1e4b87d6a19db326384dabd4c14b9c08c",
+      "upstream_sha256": "7a22dd2e60b8fcece478ced9d2533582adf3520d695acd3ab715341535c9e56d",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/implement-spec/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-implement-spec",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "fd41efb42c60c96320d6531be7e4bf15cbf5518cd652d57dff27ccffa46988e9",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/implement/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-implement",
+      "target": "mp-implement/SKILL.md",
+      "target_sha256": "b1fde7087bc6cb427dcb248d2a2a59e598bfa4b6fcb47747cbe3b5c088187527",
+      "upstream_sha256": "6d3fd9e83b8f36e5213854779db49b256a457a7ebb4a503e53fa7dcff696adc3",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/implement/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-implement",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "8970a8596ade0c28ab427f41a4ea242d6bdf6186c59ebf55e1238dbecaab79dc",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/improve-codebase-architecture/HTML-REPORT.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-improve-codebase-architecture",
+      "target": "mp-improve-codebase-architecture/HTML-REPORT.md",
+      "target_sha256": "581e8bb5a521e46bbda8ca7e19b15948bed882187108092ebb90c62513b77528",
+      "upstream_sha256": "581e8bb5a521e46bbda8ca7e19b15948bed882187108092ebb90c62513b77528",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-improve-codebase-architecture",
+      "target": "mp-improve-codebase-architecture/SKILL.md",
+      "target_sha256": "60c4a3eb06176ebf3660d1cac045d6325e506d9692f7bc7368efd27ebbf8c5f5",
+      "upstream_sha256": "552240a5ab5cec6b67c15dd1ad6e9f6962b1bca6ce870059a8c2713760c20392",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/improve-codebase-architecture/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-improve-codebase-architecture",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "c8cb20f68ebf0edb4e497bc11ae5fcaa196004e661cd189015b04f4109ced7f1",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/pr/CREDITS.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-pr",
+      "target": "mp-pr/CREDITS.md",
+      "target_sha256": "a7a087127665d7298a72280ef6e19c41ad8404523712a788c8dc3ab414bc2497",
+      "upstream_sha256": "a7a087127665d7298a72280ef6e19c41ad8404523712a788c8dc3ab414bc2497",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/pr/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-pr",
+      "target": "mp-pr/SKILL.md",
+      "target_sha256": "5d2b29c23fa4475ac88713b4e9054278279b4df8efcef3c691229523a6ac5197",
+      "upstream_sha256": "ab63f1cf78647389edcd386c9427c5dfca27ed2836930c24773ffee834c19bcd",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/pr/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-pr",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "2295b586624db4ef546f3fd4695492f039d941a46d8a1593a702ce3ca511b8ad",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/prototype/LOGIC.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-prototype",
+      "target": "mp-prototype/LOGIC.md",
+      "target_sha256": "f61c7d249e786a79ef289018901c348271e1798dd0b0bc5607b5c6f4d4a01ab9",
+      "upstream_sha256": "f61c7d249e786a79ef289018901c348271e1798dd0b0bc5607b5c6f4d4a01ab9",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/prototype/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-prototype",
+      "target": "mp-prototype/SKILL.md",
+      "target_sha256": "e521f6f78e64e400635c6a6391109cf2ab7beb9cb70b6e4d2f4289edeb4451ac",
+      "upstream_sha256": "714de632d116bb73f65cdb5a882db15b9369a6713b9a47c0fad827848f0bfbe3",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/prototype/UI.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-prototype",
+      "target": "mp-prototype/UI.md",
+      "target_sha256": "723211e878acbc7b6ff09755263f3295cde724ba902ff0064da41eed51d45ad3",
+      "upstream_sha256": "723211e878acbc7b6ff09755263f3295cde724ba902ff0064da41eed51d45ad3",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/prototype/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-prototype",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "5af65e43ab41a350436697b81e27b7f848d36782043b73c322bb2c9fa9cc55dc",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/research/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-research",
+      "target": "mp-research/SKILL.md",
+      "target_sha256": "cc56bfb38ac883029e2087c7776e7e745f2bea4653333c3fbf4cd19b57db8e70",
+      "upstream_sha256": "985569f15739c713d6784887c3d186d4ef9ac85bec5ad9c068d25bf0739928e4",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/research/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-research",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "9b4c470d63221c1f68f22df70b83e2f12401b317babe0d1b7b5f24a974474d0d",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/retro/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-retro",
+      "target": "mp-retro/SKILL.md",
+      "target_sha256": "9c6de8ab1ff8be4dd7b4d9e4c1240569440a937e1f73aba40318f73c0dde4e9d",
+      "upstream_sha256": "33fbc28568e3146f20fd908b12998bc0ab30aa4f4c87288199a40793efa94696",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/retro/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-retro",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "cb6fb9d7e6b4be5975f41f6def1dd00a1255bad5d9b02696b124c924a8b8745c",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-setup-matt-pocock-skills",
+      "target": "mp-setup-matt-pocock-skills/SKILL.md",
+      "target_sha256": "1f7fccc9fe718828de6b657242e49aa9882e405dada009086a8f66a65a3091bd",
+      "upstream_sha256": "9a0c21694be19fa3eefc39343355d3af7414716ba364882c7432c2f821eac3e9",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/setup-matt-pocock-skills/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-setup-matt-pocock-skills",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "9527de0110541c45712319025155aeab8dc7d77c6ed6e5e83271bab1851ab939",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/setup-matt-pocock-skills/domain.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-setup-matt-pocock-skills",
+      "target": "mp-setup-matt-pocock-skills/domain.md",
+      "target_sha256": "593a7042218689f1d24df89df14eaf0a20e19e0d0a7d479a01947ac78f0784b9",
+      "upstream_sha256": "593a7042218689f1d24df89df14eaf0a20e19e0d0a7d479a01947ac78f0784b9",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-setup-matt-pocock-skills",
+      "target": "mp-setup-matt-pocock-skills/issue-tracker-github.md",
+      "target_sha256": "afd6852a80185217bd28aa5cbe456bef1e85be25be7bd1fba382d5b8ee428325",
+      "upstream_sha256": "afd6852a80185217bd28aa5cbe456bef1e85be25be7bd1fba382d5b8ee428325",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-setup-matt-pocock-skills",
+      "target": "mp-setup-matt-pocock-skills/issue-tracker-gitlab.md",
+      "target_sha256": "ea175f73d193b3f55819c0ed9bbccf6ee0e70ad8f928e3d7607596c53380acd6",
+      "upstream_sha256": "ea175f73d193b3f55819c0ed9bbccf6ee0e70ad8f928e3d7607596c53380acd6",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-setup-matt-pocock-skills",
+      "target": "mp-setup-matt-pocock-skills/issue-tracker-local.md",
+      "target_sha256": "7dcda20a2eb4bdc89b95d1143423c0691309921cadae3132e6424f371030506e",
+      "upstream_sha256": "7dcda20a2eb4bdc89b95d1143423c0691309921cadae3132e6424f371030506e",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/setup-matt-pocock-skills/triage-labels.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-setup-matt-pocock-skills",
+      "target": "mp-setup-matt-pocock-skills/triage-labels.md",
+      "target_sha256": "4f53c9b40ce2651e3611aa090eaedbd6dbc9b71ef8c5f7e65eac0d8263190d0d",
+      "upstream_sha256": "4f53c9b40ce2651e3611aa090eaedbd6dbc9b71ef8c5f7e65eac0d8263190d0d",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/tdd/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-tdd",
+      "target": "mp-tdd/SKILL.md",
+      "target_sha256": "789396649fb7c96c4b20f16f2b3bfafd3b41487bf11581edd29b876ba3a48b25",
+      "upstream_sha256": "93ea419b76e9caaf26153b828e984f7c3fb136f4caa67b14af95f32ea965a1cc",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/tdd/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-tdd",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "ea6f01cf1b8c06a4b0f5b649d74b1b8ce8685e72af1b38d70d877693e092af0b",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/tdd/mocking.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-tdd",
+      "target": "mp-tdd/mocking.md",
+      "target_sha256": "3ceb807fdf4a47d6a93d4d9a891e5ba6d362a6247bd08adc451feebfc17361ef",
+      "upstream_sha256": "3ceb807fdf4a47d6a93d4d9a891e5ba6d362a6247bd08adc451feebfc17361ef",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/tdd/tests.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-tdd",
+      "target": "mp-tdd/tests.md",
+      "target_sha256": "859f9e592c188fda4fc7277dd180e4ce9c7a2e13f6efe1f6f29eccc9d28c106a",
+      "upstream_sha256": "859f9e592c188fda4fc7277dd180e4ce9c7a2e13f6efe1f6f29eccc9d28c106a",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/to-spec/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-to-spec",
+      "target": "mp-to-spec/SKILL.md",
+      "target_sha256": "2b5b73d94d1a738bedfca2202d0d8025180aec401a8bb61e35628c7d6ef512e7",
+      "upstream_sha256": "43ad9cf318e5e7d3d1fa360253a37021796dc87a0c2e595ad262661a10f85088",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/to-spec/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-to-spec",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "1c5b4d1e3d8e52287ef19cc2742fdbbfae1914ac75d33af3e4c8174f08cc55bb",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/to-tickets/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-to-tickets",
+      "target": "mp-to-tickets/SKILL.md",
+      "target_sha256": "eeb304785a68361dc29a710b24a34665cdc9382ae712d961d2f10637a981d6b9",
+      "upstream_sha256": "5c9fba69845c2519b9b35b9af42ae5142c21f8ca15ac2123dc2722002c8058ae",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/to-tickets/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-to-tickets",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "21bc6215fffcd7614e9f772bb1760e87cc5fc7dcc707e7d282bc9414267a6090",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/triage/AGENT-BRIEF.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-triage",
+      "target": "mp-triage/AGENT-BRIEF.md",
+      "target_sha256": "7f5f87fed3033df1b06e083c480f3e847b1fbb0647746b8a4c6a50f9f26ef44f",
+      "upstream_sha256": "7f5f87fed3033df1b06e083c480f3e847b1fbb0647746b8a4c6a50f9f26ef44f",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/triage/OUT-OF-SCOPE.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-triage",
+      "target": "mp-triage/OUT-OF-SCOPE.md",
+      "target_sha256": "1fbf9b432130c6380aa65813b55553cfda150309b27c595e183f8e335b8a190d",
+      "upstream_sha256": "1fbf9b432130c6380aa65813b55553cfda150309b27c595e183f8e335b8a190d",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/engineering/triage/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-triage",
+      "target": "mp-triage/SKILL.md",
+      "target_sha256": "a3768629db2ab1cb2bbcd4f61380d41a523cc6a097c37d06c0a45fe30f946535",
+      "upstream_sha256": "917b0baf74be583e74f110857ed45df2766617f75c00baf61fd136d7af515edf",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/triage/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-triage",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "2e683717720cf456d165d0bb1a68bb600d0b6a8ccb61841c172e50d26f95351c",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/wayfinder/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-wayfinder",
+      "target": "mp-wayfinder/SKILL.md",
+      "target_sha256": "1d3ca30e49f0be051091d2694e3abc2231602e15c7226a10173d1b07d9ee444c",
+      "upstream_sha256": "fee6e1d0c50f0e736b4ef8a599060c959afae904c9a97d82c97f049fcc3aa0f1",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/wayfinder/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-wayfinder",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "88bc81a11a6d52ac67aeaa76b8b619e387020d47c5133a4dd4927fd15c4ad073",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/wizard/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-wizard",
+      "target": "mp-wizard/SKILL.md",
+      "target_sha256": "ae7a60005243e9f53cf46b083da902cb2fee2fc99f4304b9132ceddc253a6363",
+      "upstream_sha256": "bdf31d48211ea559878f95a4f344aeabf8d85897488ba564382bab0b000daac1",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/engineering/wizard/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-wizard",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "98f44d682d58e262f160dc59a8befc365e0aa65820dd0261864af26aa8e59d83",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/engineering/wizard/template.sh",
+      "disposition": "promoted",
+      "mp_skill": "mp-wizard",
+      "target": "mp-wizard/template.sh",
+      "target_sha256": "33cbe9dfb1d0e9185b60248a52aabed14bc64785a00cac695e302e739dd6c153",
+      "upstream_sha256": "33cbe9dfb1d0e9185b60248a52aabed14bc64785a00cac695e302e739dd6c153",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/in-progress/README.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/in-progress/README.md",
+      "target_sha256": "740e1d097748d68ebc00cb98de7b2dadbbac0e714af37a0d6a251819c0073584",
+      "upstream_sha256": "740e1d097748d68ebc00cb98de7b2dadbbac0e714af37a0d6a251819c0073584",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/in-progress/claude-handoff/SKILL.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/in-progress/claude-handoff/SKILL.md",
+      "target_sha256": "6738e8b7c7899ea0038fb7a5c859ca1b90c7b1eb40123dcdbe94c51b5b119f12",
+      "upstream_sha256": "6738e8b7c7899ea0038fb7a5c859ca1b90c7b1eb40123dcdbe94c51b5b119f12",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/in-progress/claude-handoff/agents/openai.yaml",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/in-progress/claude-handoff/agents/openai.yaml",
+      "target_sha256": "2308a672978864633286fb9f0792b08657e501426b3f7883fc418d5d2eac5eb0",
+      "upstream_sha256": "2308a672978864633286fb9f0792b08657e501426b3f7883fc418d5d2eac5eb0",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/in-progress/loop-me/SKILL.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/in-progress/loop-me/SKILL.md",
+      "target_sha256": "e44d1cc3e760fb86ac42964c2a5f1fcac511715db50fb375f3f7be814de1eaa7",
+      "upstream_sha256": "e44d1cc3e760fb86ac42964c2a5f1fcac511715db50fb375f3f7be814de1eaa7",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/in-progress/loop-me/agents/openai.yaml",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/in-progress/loop-me/agents/openai.yaml",
+      "target_sha256": "b66fa10079957051be6a812f45e55b67ac394b71d5ba88349962b4c9205802c3",
+      "upstream_sha256": "b66fa10079957051be6a812f45e55b67ac394b71d5ba88349962b4c9205802c3",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/in-progress/setup-ts-deep-modules/SKILL.md",
+      "target_sha256": "29acca66ac99d4532e2a6f0370d8125d7cba1e87c9ac66573203c75189d3e6c7",
+      "upstream_sha256": "29acca66ac99d4532e2a6f0370d8125d7cba1e87c9ac66573203c75189d3e6c7",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/in-progress/setup-ts-deep-modules/agents/openai.yaml",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/in-progress/setup-ts-deep-modules/agents/openai.yaml",
+      "target_sha256": "159f680217d50747702620c05fd65734a152185b3219a8ca5ee4630878a354fa",
+      "upstream_sha256": "159f680217d50747702620c05fd65734a152185b3219a8ca5ee4630878a354fa",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/in-progress/setup-ts-deep-modules/dependency-cruiser.config.cjs",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/in-progress/setup-ts-deep-modules/dependency-cruiser.config.cjs",
+      "target_sha256": "3c4973bec69f73b2117654abf9e666a7c28665b213be20e6d39869e29842428e",
+      "upstream_sha256": "3c4973bec69f73b2117654abf9e666a7c28665b213be20e6d39869e29842428e",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/in-progress/writing-beats/SKILL.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/in-progress/writing-beats/SKILL.md",
+      "target_sha256": "a96abafa2372eede8267d770138b322d6125da8adaa7ccf0a5e08e4ee13ee71e",
+      "upstream_sha256": "a96abafa2372eede8267d770138b322d6125da8adaa7ccf0a5e08e4ee13ee71e",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/in-progress/writing-beats/agents/openai.yaml",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/in-progress/writing-beats/agents/openai.yaml",
+      "target_sha256": "ddaef01da61d8e3c5f482c4403033c20cf5823f08a1dbf1d4c871670831d01e2",
+      "upstream_sha256": "ddaef01da61d8e3c5f482c4403033c20cf5823f08a1dbf1d4c871670831d01e2",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/in-progress/writing-fragments/SKILL.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/in-progress/writing-fragments/SKILL.md",
+      "target_sha256": "298b0edd23df229183630de592ed8aa4289233560f2040691f6eb77caeaad4ea",
+      "upstream_sha256": "298b0edd23df229183630de592ed8aa4289233560f2040691f6eb77caeaad4ea",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/in-progress/writing-fragments/agents/openai.yaml",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/in-progress/writing-fragments/agents/openai.yaml",
+      "target_sha256": "81167f25ee8ea1bb4b4958f12b6702ea972ad31b05e03ec91e39fa4bae0c2641",
+      "upstream_sha256": "81167f25ee8ea1bb4b4958f12b6702ea972ad31b05e03ec91e39fa4bae0c2641",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/in-progress/writing-shape/SKILL.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/in-progress/writing-shape/SKILL.md",
+      "target_sha256": "f5e6c57bdd85178ace4a260c92f46da6b64ddee18215b461d875739c68976f72",
+      "upstream_sha256": "f5e6c57bdd85178ace4a260c92f46da6b64ddee18215b461d875739c68976f72",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/in-progress/writing-shape/agents/openai.yaml",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/in-progress/writing-shape/agents/openai.yaml",
+      "target_sha256": "56de45430e23104ff178415f5ecf7821d51a9cfabd8814b1607ebf39da2ef5cd",
+      "upstream_sha256": "56de45430e23104ff178415f5ecf7821d51a9cfabd8814b1607ebf39da2ef5cd",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/misc/README.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/misc/README.md",
+      "target_sha256": "95f0b467b7f3a2bb27421c6536f35392b6846f5ad26b44ab7df00380ed02edf0",
+      "upstream_sha256": "95f0b467b7f3a2bb27421c6536f35392b6846f5ad26b44ab7df00380ed02edf0",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/misc/git-guardrails-claude-code/SKILL.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/misc/git-guardrails-claude-code/SKILL.md",
+      "target_sha256": "69b291d655626a01602b998a1836fcb93c058ede68dfafddfd71e87f17074764",
+      "upstream_sha256": "69b291d655626a01602b998a1836fcb93c058ede68dfafddfd71e87f17074764",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/misc/git-guardrails-claude-code/agents/openai.yaml",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/misc/git-guardrails-claude-code/agents/openai.yaml",
+      "target_sha256": "d53cd783fc0ac208dec9a4c267989284384785aab6422dccdaed42f9e40243ec",
+      "upstream_sha256": "d53cd783fc0ac208dec9a4c267989284384785aab6422dccdaed42f9e40243ec",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh",
+      "target_sha256": "234922b83c0a1737ee7300806c21ac0f389b07aaeb65c2d71ccedafbc5e1ea4b",
+      "upstream_sha256": "234922b83c0a1737ee7300806c21ac0f389b07aaeb65c2d71ccedafbc5e1ea4b",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/misc/migrate-to-shoehorn/SKILL.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/misc/migrate-to-shoehorn/SKILL.md",
+      "target_sha256": "de4da4c11d924fac79c924b2ee3d2db4a5cb98386eb490a599119463d036ae72",
+      "upstream_sha256": "de4da4c11d924fac79c924b2ee3d2db4a5cb98386eb490a599119463d036ae72",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/misc/migrate-to-shoehorn/agents/openai.yaml",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/misc/migrate-to-shoehorn/agents/openai.yaml",
+      "target_sha256": "395c2db852e66a199f1cd07f7ed92d66cb6f0787460c5475926f1a5e778b699d",
+      "upstream_sha256": "395c2db852e66a199f1cd07f7ed92d66cb6f0787460c5475926f1a5e778b699d",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/misc/scaffold-exercises/SKILL.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/misc/scaffold-exercises/SKILL.md",
+      "target_sha256": "75f5c9d771606fb9762f16522efc954df11c324f87148d8ff069bce166257de9",
+      "upstream_sha256": "75f5c9d771606fb9762f16522efc954df11c324f87148d8ff069bce166257de9",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/misc/scaffold-exercises/agents/openai.yaml",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/misc/scaffold-exercises/agents/openai.yaml",
+      "target_sha256": "525b33913340bea7947ad2de17f2a7c5fb94be543345fe80ae753b9a44ba601d",
+      "upstream_sha256": "525b33913340bea7947ad2de17f2a7c5fb94be543345fe80ae753b9a44ba601d",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/misc/setup-pre-commit/SKILL.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/misc/setup-pre-commit/SKILL.md",
+      "target_sha256": "c9819d7f1e3b198064edc1faa3154224ed67395e9f07f5d3cea4b67cf0a11a98",
+      "upstream_sha256": "c9819d7f1e3b198064edc1faa3154224ed67395e9f07f5d3cea4b67cf0a11a98",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/misc/setup-pre-commit/agents/openai.yaml",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/misc/setup-pre-commit/agents/openai.yaml",
+      "target_sha256": "acf41db398c5c43afe504008bb7d615a97b6498b0f1f6c5b2395254c0bfb57d1",
+      "upstream_sha256": "acf41db398c5c43afe504008bb7d615a97b6498b0f1f6c5b2395254c0bfb57d1",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/productivity/README.md",
+      "disposition": "stash",
+      "target": "provenance/reference-only/skills/productivity/README.md",
+      "target_sha256": "8e39d23dc60e4b3e433ea17f0ed79510c73873a2779e9852920c9791a217efc8",
+      "upstream_sha256": "8e39d23dc60e4b3e433ea17f0ed79510c73873a2779e9852920c9791a217efc8",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/productivity/grill-me/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-grill-me",
+      "target": "mp-grill-me/SKILL.md",
+      "target_sha256": "a60e658e10e227b0191c358eda1ef80d231494360c979ffcd6eff9cddcd8a75a",
+      "upstream_sha256": "caaf8b8de1684f96e26b28f3c29189db5c89cce4b73e1c93d86164f66ef88637",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/productivity/grill-me/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-grill-me",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "c061e39c3e0f9d865fb1b97556d485704af2a8a58f4b8221a8917a5c2074a32b",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/productivity/grilling/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-grilling",
+      "target": "mp-grilling/SKILL.md",
+      "target_sha256": "cec67f3b6d799cca8635c741bb0bb069e46da40474fda30eb854b4f541f700a2",
+      "upstream_sha256": "10ff989e7498b23b5acb49d5048f11dcd906757d2f79c5cdf8a00001381296f2",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/productivity/grilling/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-grilling",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/productivity/handoff/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-handoff",
+      "target": "mp-handoff/SKILL.md",
+      "target_sha256": "af53534618d98e12b4c53ee48636098ce6da1ab3d9cfb6538c64141d8d715069",
+      "upstream_sha256": "7c62de979fdc7ac32fb5ddb2146156c917f80ee070d30fadc9d40343c4b6ed25",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/productivity/handoff/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-handoff",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "5c479fd562c691851690e8b18c8501045bef0943c10743d636b2fae26add1d28",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/productivity/teach/GLOSSARY-FORMAT.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-teach",
+      "target": "mp-teach/GLOSSARY-FORMAT.md",
+      "target_sha256": "9b99859ec28437668130d8f2ce5a342938970f8a1ed4fd38c3eab4f4b5fff210",
+      "upstream_sha256": "9b99859ec28437668130d8f2ce5a342938970f8a1ed4fd38c3eab4f4b5fff210",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/productivity/teach/LEARNING-RECORD-FORMAT.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-teach",
+      "target": "mp-teach/LEARNING-RECORD-FORMAT.md",
+      "target_sha256": "701fa34b6748aa89e6c960ffb815257f481a7d77fb2900f9028f7edf3fdd6052",
+      "upstream_sha256": "701fa34b6748aa89e6c960ffb815257f481a7d77fb2900f9028f7edf3fdd6052",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/productivity/teach/MISSION-FORMAT.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-teach",
+      "target": "mp-teach/MISSION-FORMAT.md",
+      "target_sha256": "8cacbb3c0644d3ae0ea4965564797099401a6930a23f7cf462918576587f2418",
+      "upstream_sha256": "8cacbb3c0644d3ae0ea4965564797099401a6930a23f7cf462918576587f2418",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/productivity/teach/RESOURCES-FORMAT.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-teach",
+      "target": "mp-teach/RESOURCES-FORMAT.md",
+      "target_sha256": "e9cacf34026e11a8d1c8f9de88abe5bcbf654f4ebdb25cae8c0de0d5f48f44ec",
+      "upstream_sha256": "e9cacf34026e11a8d1c8f9de88abe5bcbf654f4ebdb25cae8c0de0d5f48f44ec",
+      "relationship": "byte-identical"
+    },
+    {
+      "upstream_path": "skills/productivity/teach/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-teach",
+      "target": "mp-teach/SKILL.md",
+      "target_sha256": "a60129945f0efb5e41ffd4f87f3c708ba286dc482d5d91387491f7dcbf51f7ef",
+      "upstream_sha256": "a32df9dcdfc0c4fdc1c98e1ed3940c5f56b84c1aa90ff60346f32b8b53915b43",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/productivity/teach/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-teach",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "5856f3ae8aec742f1499c640aecdd5f1d6af5fa210a7c6ec794de8263a6f733f",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/productivity/to-questionnaire/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-to-questionnaire",
+      "target": "mp-to-questionnaire/SKILL.md",
+      "target_sha256": "226030ed687a0d4db0590bcbb799d814dd2f12b264d3e8a95e10e95d5f5cfd33",
+      "upstream_sha256": "b5eb929842ee0e93d867c5e906d183d350f2f2d149eaeaa86967d94d8eda1d3b",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/productivity/to-questionnaire/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-to-questionnaire",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "9e8a06c38c8842eea8d4922cb9d1ead8e3ace647bab259b943c994a1b4742bc2",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/productivity/wait-what/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-wait-what",
+      "target": "mp-wait-what/SKILL.md",
+      "target_sha256": "36ca7ae7af424777b3e6a43482c5dd49438dd93a456d6473753607f8127e58bb",
+      "upstream_sha256": "d961bb37defd975c539427edb8f450cdbccdcdd552e213c1ece46676a7970905",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/productivity/wait-what/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-wait-what",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "b41faadf741d51e4ea184148b2d1854d93f947aaf754c7844f70a00f04194999",
+      "relationship": "carried-declined"
+    },
+    {
+      "upstream_path": "skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-writing-for-agents",
+      "target": "mp-writing-for-agents/SKILL-MECHANICS.md",
+      "target_sha256": "201b4e5868275629512071af97c15a01f0dee2f5fba68da434053fd0caf1f3d7",
+      "upstream_sha256": "c768e6307c7c10728c401c213f2c4ba71c542127eeb7ad2956aabd15a0fa0059",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/productivity/writing-for-agents/SKILL.md",
+      "disposition": "promoted",
+      "mp_skill": "mp-writing-for-agents",
+      "target": "mp-writing-for-agents/SKILL.md",
+      "target_sha256": "371a5b85131ea83e962724354a5e3461c2ba38d7e96238ef4c7ca7786c1144f1",
+      "upstream_sha256": "551adca942227b44192edba88acd4e8db911f0121ce58ad16944ccf6a896a74a",
+      "relationship": "adapted"
+    },
+    {
+      "upstream_path": "skills/productivity/writing-for-agents/agents/openai.yaml",
+      "disposition": "promoted",
+      "mp_skill": "mp-writing-for-agents",
+      "target": null,
+      "target_sha256": null,
+      "upstream_sha256": "eacb24b2a618cfb81dacb0416f4fdd75ddf3a8060f8ddb99aae1b1e301907e4b",
+      "relationship": "carried-declined"
+    }
+  ]
+}

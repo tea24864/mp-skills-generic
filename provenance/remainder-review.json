@@ -1,0 +1,30 @@
+{
+  "pin": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+  "note": "Review verdicts for upstream revision files intentionally not staged and not stashed (provenance/coverage.json disposition 'remainder'). Recorded 2026-10-03.",
+  "files": [
+    {
+      "path": "LICENSE",
+      "reason": "Repo-node file; hash-identical MIT terms are already committed at the repo root (LICENSE) and cited in inventory.json original_license, so staging the upstream copy is redundant."
+    },
+    {
+      "path": ".gitignore",
+      "reason": "Repo-node file; upstream git configuration, not skills content. No effect on the port's subject matter."
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "reason": "Upstream release automation bound to upstream's npm/plugin publishing pipeline; the port distributes via tools/specialize.py instead."
+    },
+    {
+      "path": "scripts/list-skills.sh",
+      "reason": "Upstream repo helper for its own plugin marketplace listing; superseded by inventory.json in the port."
+    },
+    {
+      "path": "scripts/sync-plugin-version.mjs",
+      "reason": "Upstream repo helper syncing package/plugin versions for its release flow; no analogue needed in the port."
+    },
+    {
+      "path": ".agents/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md",
+      "reason": "Upstream infra ADR: every sibling ADR (0002-ship-as-a-claude-code-plugin, agent docs) is already preserved in reference-only/infra; 0001 alone was omitted from the stash copy list as an upstream-internal infra decision with no bearing on the promoted skill bodies."
+    }
+  ]
+}
